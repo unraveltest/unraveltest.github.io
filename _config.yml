@@ -1,14 +1,1 @@
-defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  -
-    scope:
-      path: "projects"
-      type: "pages" # previously `page` in Jekyll 2.2.
-    values:
-      layout: "my-site" # overrides previous default layout
-      author: "Unravel Data Inc."
+theme: jekyll-theme-minimal

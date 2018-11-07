@@ -1,0 +1,664 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Step 2: Enable Additional Data Collection / Instrumentation for HDP &#8212; UN45  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MapR" href="installation-mapr.html" />
+    <link rel="prev" title="Step 1: Install Unravel Server on HDP" href="installation-hdp-step1.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="step-2-enable-additional-data-collection-instrumentation-for-hdp">
+<h1>Step 2: Enable Additional Data Collection / Instrumentation for HDP<a class="headerlink" href="#step-2-enable-additional-data-collection-instrumentation-for-hdp" title="Permalink to this headline">¶</a></h1>
+<div class="docutils container" id="page">
+<div class="aui-page-panel docutils container" id="main">
+<div class="docutils container" id="main-header">
+<div class="docutils container" id="breadcrumb-section">
+<ol class="arabic simple">
+<li><a class="reference external" href="index.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Unravel-4.4_541197025.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Installation-Guides_541393730.html">Installation
+Guides</a></li>
+<li><a class="reference external" href="541197289.html">Hortonworks Data Platform (HDP)</a></li>
+</ol>
+</div>
+<p class="pagetitle rubric" id="title-heading">Unravel 4.4 : Step 2: Enable Additional Data
+Collection / Instrumentation for HDP</p>
+</div>
+<div class="view docutils container" id="content">
+<div class="page-metadata docutils container">
+Created by katch, last modified by Grant Liu on Oct 29, 2018</div>
+<div class="wiki-content group docutils container" id="main-content">
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-introduction">Introduction</p>
+<p>This topic explains how to configure&nbsp;Unravel Sensor for Tez
+(<code class="docutils literal notranslate"><span class="pre">unravel_us</span></code>) to retrieve data from the Tez execution
+engine. Retrievable data includes Hive queries, application
+timelines, sensor agent data, YARN RM data, logs, and so on.</p>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">HIGHLIGHTED</span></code>text and text with brackets ( { } )
+indicate where you must substitute your particular
+values for the text.</p>
+<p><code class="docutils literal notranslate"><span class="pre">UNRAVEL_HOST_IP</span></code>must be a fully qualified DNS or
+an IP address.</p>
+</div>
+</div></blockquote>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-1-convertyourunravelinstallationtohdp">1.&nbsp;Convert Your Unravel Installation to HDP.</p>
+<div class="docutils container">
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+Note: This change remains after RPM upgrades.</div>
+</div></blockquote>
+</div>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-2-updatesite-specifichdppropertiesinunravel-properties">2. Update Site-Specific HDP Properties in
+unravel.properties</p>
+<ul>
+<li><p class="first">Add these properties
+<code class="docutils literal notranslate"><span class="pre">to/usr/local/unravel/etc/unravel.properties</span></code>:</p>
+<div class="table-wrap docutils container">
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="39%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Default
+Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.yarn.timelin</span>
+<span class="pre">e-service.webapp.address</span></code></td>
+<td>The http address of the
+Timeline service web
+application</td>
+<td><a class="reference external" href="http://">http://</a>
+localho
+st</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.yarn.timelin</span>
+<span class="pre">e-service.port</span></code></td>
+<td>Timeline service port</td>
+<td>8188</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example,</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">&nbsp;Open <code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/etc/unravel.properties</span></code> to
+see if you need to modify any of these properties which
+were added or modified by the script&nbsp;above
+(<code class="docutils literal notranslate"><span class="pre">switch_to_hdp.sh</span></code>).</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">Log into Ambari Web UI (AWU) to verify the above
+properties have been set correctly in
+<code class="docutils literal notranslate"><span class="pre">unravel.properties</span></code>. Update the value of any property
+which has not been set correctly.</p>
+<ul class="simple">
+<li>On the left-hand side of AWU’s dashboard, click
+MapReduce2 | Configs. Select the Advanced tab, and
+then select<strong>Advanced mapred-site</strong><ul>
+<li>Verify
+<code class="docutils literal notranslate"><span class="pre">com.unraveldata.job.collector.done.log.base</span></code>
+equals <strong>mapreduce.jobhistory.done-dir.</strong></li>
+</ul>
+</li>
+<li>On the left-hand side of AWU’s dashboard, click YARN
+| Configs. Select the Advanced tab, and then
+select<strong>Node Manager</strong>.<ul>
+<li>Verify
+<code class="docutils literal notranslate"><span class="pre">com.unraveldata.job.collector.done.log.</span></code><code class="docutils literal notranslate"><span class="pre">aggregation.base</span></code>
+equals <strong>yarn.nodemanager.remote-app=log-dir</strong>.</li>
+</ul>
+</li>
+<li>On the left-hand side of AWU’s dashboard, click Hive
+| Configs. Select the Advanced tab, and then
+select<strong>Hive Metastore</strong>.<ul>
+<li>Verify
+<code class="docutils literal notranslate"><span class="pre">javax.jdo.option.ConnectionURL</span></code>equals&nbsp;<a class="reference external" href="jdbc:mysql://">jdbc:mysql://</a><strong>Database
+Host</strong>:3306/<strong>Database URL</strong>.</li>
+<li>Verify
+<code class="docutils literal notranslate"><span class="pre">javax.jdo.option.ConnectionDriverName</span></code>equals
+<strong>JDBC Driver Class</strong>.</li>
+<li>Verify
+<code class="docutils literal notranslate"><span class="pre">javax.jdo.option.ConnectionUserName</span></code>equals
+<strong>Database</strong> <strong>Username</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-3-startunravelserver">3. Start Unravel Server</p>
+<div class="docutils container">
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+Note: Unravel must be up for the next step to
+complete.</div>
+</div></blockquote>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</div>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-4-installunravelhivehookandsparksensorontohdpservers">4. Install Unravel Hive Hook and Spark Sensor
+Onto HDP Servers</p>
+<div class="docutils container">
+Install Unravel Hive Hook and Spark Sensor onto HDP
+servers (JAR files) as follows (substitute the correct
+fully qualified host name or IP address
+for&nbsp;<code class="docutils literal notranslate"><span class="pre">UNRAVEL_HOST_IP</span></code>).</div>
+<ul>
+<li><p class="first">Login as root and ensure <code class="docutils literal notranslate"><span class="pre">wget</span></code> is installed</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">From Unravel server (eg. edge node) run on each server
+that will use instrumentation.</p>
+<p>confluence-information-macro confluence-information-macro-warning</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p>Be sure to substitute valid values.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SPARK_VERSION_X.Y.Z</span></code>has the following possible
+value: 1.3.0, 1.5.0, 1.6.0, 2.0.0, 2.1.0,&nbsp;2.2.0 and
+2.3.0&nbsp;for Spark
+versions&nbsp;1.3.x,&nbsp;1.5.x,&nbsp;&nbsp;1.6.x,&nbsp;2.0.x,&nbsp;&nbsp;2.1.x,
+2.2.x, and 2.3.x respectively.</p>
+<p><code class="docutils literal notranslate"><span class="pre">HIVE_VERSION</span></code>&nbsp;must be a Hive version that
+Unravel Supports, i.e., 1.2.0 or 0.13.0.&nbsp; If you
+are using Hive 1.2.1, please use&nbsp;1.2.0 for the
+Hive version.</p>
+</div>
+</div></blockquote>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">Files are installed locally on the edge node under:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">/usr/local/unravel_client</span> <span class="pre">(Hive</span> <span class="pre">hook</span> <span class="pre">jar)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/usr/local/unravel-agent/jars/</span> <span class="pre">(Resource</span> <span class="pre">metrics</span> <span class="pre">sensor</span> <span class="pre">jars)</span></code></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first">Manually copy these two directories on all nodes in the
+cluster (worker / edge / master). In all cases,
+instrumented nodes must be able to open port 4043 of
+Unravel Server (<code class="docutils literal notranslate"><span class="pre">host2</span></code> if multi-host Unravel install)</p>
+</li>
+</ul>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-5-addunravelhivehookhive-sitesettingstoallofhdp-sserversintheclusterusingawu">5. Add Unravel Hive Hook hive-site Settings to
+All of HDP’s Servers in the Cluster Using AWU</p>
+<div class="docutils container">
+<p>confluence-information-macro confluence-information-macro-warning</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+Completion of this step requires a restart of all
+affected Hive services in Ambari UI.</div>
+</div></blockquote>
+</div>
+<ul>
+<li><p class="first">In AWU, on the left-hand side, click <strong>Hive</strong> |
+<strong>Configs</strong>. Select the <strong>Advanced</strong> tab, and then select
+<strong>Custom hive-site</strong> and <strong>Add Property</strong> below and use
+<strong>Bulk property add mode.</strong></p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<ul>
+<li><p class="first">If LLAP is enabled copy the above settings in <strong>Custom
+hive-interactive-site</strong> as well.</p>
+<p>confluence-information-macro confluence-information-macro-tip</p>
+<blockquote>
+<div><p>Manual edit hive-site.xml (no AWU)</p>
+<div class="confluence-information-macro-body docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">hive-site.xml</span></code>file is located at
+<code class="docutils literal notranslate"><span class="pre">/etc/hive/conf/</span></code>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Add <code class="docutils literal notranslate"><span class="pre">AUX_CLASSPATH</span></code> to AWU’s <strong>hive-env</strong> template:</p>
+<ul>
+<li><p class="first">In AWU, on the left-hand side, click <strong>Hive</strong>, next
+click <strong>Configs</strong>, go to the <strong>Advanced</strong> tab, and
+select/click <strong>Advanced hive-env</strong>.</p>
+</li>
+<li><p class="first">Next, inside the <strong>Advanced hive-env</strong> template,
+towards the end of line add below:</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">If LLAP is enabled copy above line of code into
+<strong>Advanced hive-interactive-env</strong> as well.</p>
+<p>confluence-information-macro confluence-information-macro-tip</p>
+<blockquote>
+<div><p>You can manually edit hive-env.sh without using
+AWU.</p>
+<div class="confluence-information-macro-body docutils container">
+<p>The <code class="docutils literal notranslate"><span class="pre">hive-env.sh</span></code> file is located at
+<code class="docutils literal notranslate"><span class="pre">/etc/hive/conf/</span></code>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Add <code class="docutils literal notranslate"><span class="pre">HADOOP_CLASSPATH</span></code> to AWU’s <strong>hadoop-env</strong>
+template:</p>
+<ul>
+<li><p class="first">In AWU, on the left-hand side, click <strong>HDFS</strong>, next
+click <strong>Configs</strong>, go to the <strong>Advanced</strong> tab, and
+select/click <strong>Advanced hadoop-env</strong>.</p>
+</li>
+<li><p class="first">Next, inside the <strong>hadoop-env</strong> template, look
+for&nbsp;<strong>export HADOOP_CLASSPATH</strong> and append unravel’s
+jar path like below:</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-6-optionallyfortez-enableunraveltezinstrumentationonallofhdp-sservicesinthecluster">6. <strong>Optionally for Tez</strong>, Enable Unravel Tez
+Instrumentation on all of HDP’s Services in the Cluster</p>
+<div class="docutils container">
+<p>confluence-information-macro confluence-information-macro-warning</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+Completion of this step requires a restart of all
+affected Hive services in Ambari UI.</div>
+</div></blockquote>
+</div>
+<p>Confirm that hive-execution.engine is set to tez.</p>
+<div class="preformatted panel docutils container">
+<div class="preformattedcontent panelcontent docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">hive</span><span class="o">.</span><span class="n">execution</span><span class="o">.</span><span class="n">engine</span><span class="o">=</span><span class="n">tez</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the Ambari Web UI (AWU), configure the Btrace agent
+for Tez:</p>
+<ul>
+<li><p class="first">Append<code class="docutils literal notranslate"><span class="pre">-javaagent:/usr/local/unravel-agent/jars/btrace-agent.jar=libs=mr,config=tez</span> <span class="pre">-Dunravel.server.hostport=UNRAVEL_HOST_IP:4043</span></code>to
+tez.am.launch.cmd-opts and tez.task.launch.cmd-opts.</p>
+</li>
+<li><p class="first">Restart the affected component(s). The screenshot below
+illustrates this change.</p>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p>In a Kerberos environment you need to
+modify&nbsp;tez.am.view-acls property with the RUN_AS
+user or *.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-7-optionallyforsparkonyarn">7. <strong>Optionally for Spark on YARN</strong>.</p>
+<p>Enable Unravel Spark Instrumentation on All of HDP’s Servers
+in the Cluster</p>
+<div class="docutils container">
+<p>confluence-information-macro confluence-information-macro-warning</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p>Completion of this step requires a restart of all
+affected Spark services in Ambari UI.</p>
+<p>Be sure to substitute valid
+values.for&nbsp;<code class="docutils literal notranslate"><span class="pre">UNRAVEL_HOST_IPX</span></code>
+and&nbsp;<code class="docutils literal notranslate"><span class="pre">SPARK_VERSION_X.Y.</span></code></p>
+<p>&nbsp;<code class="docutils literal notranslate"><span class="pre">SPARK_VERSION_X.Y</span></code> &nbsp;has the following possible
+values:&nbsp;<strong>``spark-1.3``</strong>&nbsp;for Spark
+1.3.x,&nbsp;<a href="#id1"><span class="problematic" id="id2">**</span></a><code class="docutils literal notranslate"><span class="pre">spark-1.5</span></code>&nbsp;<a href="#id3"><span class="problematic" id="id4">**</span></a>for Spark
+1.5.x,&nbsp;<a href="#id5"><span class="problematic" id="id6">**</span></a><code class="docutils literal notranslate"><span class="pre">spark-1.6</span></code>&nbsp;<a href="#id7"><span class="problematic" id="id8">**</span></a>for Spark 1.6.x,
+&nbsp;<a href="#id9"><span class="problematic" id="id10">**</span></a><code class="docutils literal notranslate"><span class="pre">spark-2.0</span></code>&nbsp;<a href="#id11"><span class="problematic" id="id12">**</span></a>for Spark 2.0.x,
+spark-<code class="docutils literal notranslate"><span class="pre">2.2</span></code>&nbsp;for Spark 2.2.x, and
+spark-<code class="docutils literal notranslate"><span class="pre">2.3</span></code>&nbsp;for Spark 2.3.x</p>
+</div>
+</div></blockquote>
+</div>
+<ul>
+<li><p class="first">Add Spark properties into AWU’s <strong>Custom
+spark-defaults</strong>:</p>
+<ul class="simple">
+<li>In AWU, on the left-hand side, click <strong>Spark</strong> |
+<strong>Configs</strong> | <strong>Custom spark-defaults</strong>.</li>
+</ul>
+</li>
+<li><p class="first">confluence-information-macro confluence-information-macro-tip</p>
+<blockquote>
+<div><p>You can manually edit spark-defaults.conf without
+using AWU.</p>
+<div class="confluence-information-macro-body docutils container">
+<p>The default&nbsp;location for&nbsp;<code class="docutils literal notranslate"><span class="pre">spark-defaults.conf</span></code>
+is&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/hdp/current/SPARK_VERSION_X.Y</span></code>&nbsp;except
+when</p>
+<ul>
+<li><p class="first">The cluster only has one spark 1.X
+version:&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/hdp/current/spark-client/conf</span></code></p>
+</li>
+<li><p class="first">For spark 2.X
+version:&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/hdp/current/spark2-client/conf</span></code></p>
+<p>Inside <strong>Custom spark-defaults</strong>, click <strong>Add
+Property</strong> for Spark as follows and use &nbsp;<strong>Bulk
+property add mode</strong>:</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-8-optionallyformapreduce2-mr">8.&nbsp;<strong>Optionally for MapReduce2</strong> (MR)</p>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-jvmsensorcluster-wide">JVM Sensor Cluster-Wide</p>
+<div class="docutils container">
+<p>confluence-information-macro confluence-information-macro-warning</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+Completion of this step will require a restart of
+all affected HDFS, MAPREDUCE2, YARN andHIVE
+services in Ambari UI.</div>
+</div></blockquote>
+</div>
+<ul>
+<li><p class="first">In AWU, on the left-hand side,&nbsp;click&nbsp;<strong>MapReduce2</strong>,
+next click&nbsp;<strong>Configs</strong>, go to the&nbsp;<strong>Advanced</strong>&nbsp;tab,
+and select/click <strong>Advanced&nbsp;mapred-site</strong></p>
+</li>
+<li><p class="first">Search for MR AppMaster Java Heap Size property and
+concatenate by copying and pasting the below property for
+<a href="#id13"><span class="problematic" id="id14">``</span></a>current.yarn.app.mapreduce.am.command-opts``MR JVM
+sensor. Be sure to leave a white space in-between the
+current and the following new property.</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">On the top notification banner, click Save</p>
+</li>
+<li><p class="first">In AWU, on the left-hand side, click <strong>MapReduce2</strong>, next
+click&nbsp;<strong>Configs</strong>, go to the&nbsp;<strong>Advanced</strong>&nbsp;tab, and
+select/click&nbsp;<strong>Custom mapred-site:</strong></p>
+</li>
+<li><p class="first">Inside&nbsp;<strong>Custom&nbsp;mapred-site</strong>, click&nbsp;<strong>Add
+Property</strong>&nbsp;for MR JVM sensor as follows and use&nbsp;&nbsp;<strong>Bulk
+property add mode</strong>:</p>
+</li>
+<li><p class="first">On the top notification banner, click Save</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<p>Notice that in this code block, the blank lines separate
+single full lines of text that are wrapped due to length.
+Also, ensure you replace <code class="docutils literal notranslate"><span class="pre">UNRAVEL_HOST_IP</span></code>&nbsp;with your
+Unravel server’s IP address.</p>
+<p>confluence-information-macro confluence-information-macro-tip</p>
+<blockquote>
+<div><p>You can manually edit mapred-site.xml without using
+AWU.</p>
+<div class="confluence-information-macro-body docutils container">
+<p>The <code class="docutils literal notranslate"><span class="pre">mapred-site.xml</span></code> file is located at
+<code class="docutils literal notranslate"><span class="pre">/etc/hadoop/conf/</span></code>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Propagate Unravel resource metrics sensor jaronto all the
+servers in the clusteras follows<strong>:</strong></p>
+<p>confluence-information-macro confluence-information-macro-note</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p>If you have already run the
+<code class="docutils literal notranslate"><span class="pre">unravel_hdp_setup.sh</span></code> script to distribute
+sensor; you can skip the following steps</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">ssh to the Unravel gateway host server and use guided
+steps to unzip the Unravel MR jars.</p>
+<ul>
+<li><p class="first">With root or sudo access, change directory to
+<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel-agent</span></code> and run the below
+<code class="docutils literal notranslate"><span class="pre">curl</span></code> get command:</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<p>confluence-information-macro confluence-information-macro-tip</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p>Ensure you have already installed <code class="docutils literal notranslate"><span class="pre">unzip</span></code>,
+<code class="docutils literal notranslate"><span class="pre">curl</span></code>, and Unravel port #<code class="docutils literal notranslate"><span class="pre">3000</span></code> must be
+open</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Tar up the&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel-agent</span></code> directory,
+and propagate to all the servers in the HDP cluster</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">Copy the <code class="docutils literal notranslate"><span class="pre">unravel-agent.tar</span></code> file to all your
+servers, and <code class="docutils literal notranslate"><span class="pre">untar</span></code> to&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/local</span></code> directory
+because when you&nbsp;<code class="docutils literal notranslate"><span class="pre">untar</span></code>&nbsp;<code class="docutils literal notranslate"><span class="pre">unravel-agent</span></code>
+directory will appear</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-9-optionallyforyarn">9. Optionally for YARN</p>
+<ul class="simple">
+<li>If&nbsp;<code class="docutils literal notranslate"><span class="pre">yarn.acl.enable=true</span></code> then you need to grant
+Unravel access and must set one of the following:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">yarn.acl.enable=false,</span></code>or</li>
+<li><code class="docutils literal notranslate"><span class="pre">yarn.admin.acl=userName</span></code>&nbsp; (set to * to allow
+access to everyone).</li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="step2-enableadditionaldatacollection-instrumentationforhdp-10-confirmthatunravelwebuishowstezdata">10. Confirm that Unravel Web UI Shows Tez Data</p>
+<ul>
+<li><p class="first">Run
+<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/install_bin/hive_test_simple.sh</span></code> on
+HDP cluster or any cloud environment where
+<code class="docutils literal notranslate"><span class="pre">hive.execution.engine=tez</span></code>.</p>
+</li>
+<li><p class="first">Check Unravel Web UI for Tez data. For instructions,
+see<a class="reference external" href="https://unraveldata.atlassian.net/wiki/spaces/UN44/pages/541164197/The+Applications+Page#TheApplicationsPage-TezAPMTezApplicationManager">Tez Application
+Manager</a>.</p>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p>Unravel Web UI may take a few seconds to load Tez
+data.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="pagesection group docutils container">
+<div class="pagesectionheader docutils container">
+<p class="pagesectiontitle rubric" id="attachments">Attachments:</p>
+</div>
+<div class="greybox docutils container">
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image0" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/561709534/561709537.png">bulk.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image1" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/561709534/561709540.png">hdp_part2_image_002.PNG</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image2" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/561709534/561709543.png">hdp_part2_image_001.PNG</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image3" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/561709534/561709546.png">image2017-10-25_8-1-4.png</a>
+(image/png)</div>
+</div>
+</div>
+</div>
+<div class="docutils container" id="footer">
+<div class="section footer-body docutils container">
+<p>Document generated by Confluence on Nov 02, 2018 15:15</p>
+<div class="docutils container" id="footer-logo">
+<a class="reference external" href="http://www.atlassian.com/">Atlassian</a></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">UN45</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation-cdh.html">Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation-hdp.html">Hortonworks Data Platform (HDP)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="installation-hdp-step1.html">Step 1: Install Unravel Server on HDP</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Step 2: Enable Additional Data Collection / Instrumentation for HDP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation-mapr.html">MapR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-amazonemr.html">Amazon Elastic MapReduce (Amazon EMR)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#id1">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html#id1">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html#id1">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="installation.html">Installation</a><ul>
+  <li><a href="installation-hdp.html">Hortonworks Data Platform (HDP)</a><ul>
+      <li>Previous: <a href="installation-hdp-step1.html" title="previous chapter">Step 1: Install Unravel Server on HDP</a></li>
+      <li>Next: <a href="installation-mapr.html" title="next chapter">MapR</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Unravel Data. All rights reserved.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/installation-hdp-step2.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

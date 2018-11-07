@@ -1,0 +1,778 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Step 1: Install Unravel Server on HDP &#8212; UN45  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Step 2: Enable Additional Data Collection / Instrumentation for HDP" href="installation-hdp-step2.html" />
+    <link rel="prev" title="Hortonworks Data Platform (HDP)" href="installation-hdp.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="step-1-install-unravel-server-on-hdp">
+<h1>Step 1: Install Unravel Server on HDP<a class="headerlink" href="#step-1-install-unravel-server-on-hdp" title="Permalink to this headline">¶</a></h1>
+<div class="docutils container" id="page">
+<div class="aui-page-panel docutils container" id="main">
+<div class="docutils container" id="main-header">
+<div class="docutils container" id="breadcrumb-section">
+<ol class="arabic simple">
+<li><a class="reference external" href="index.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Unravel-4.4_541197025.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Installation-Guides_541393730.html">Installation
+Guides</a></li>
+<li><a class="reference external" href="541197289.html">Hortonworks Data Platform (HDP)</a></li>
+</ol>
+</div>
+<p class="pagetitle rubric" id="title-heading">Unravel 4.4 : Step 1: Install Unravel Server on HDP</p>
+</div>
+<div class="view docutils container" id="content">
+<div class="page-metadata docutils container">
+Created by katch, last modified on Sep 25, 2018</div>
+<div class="wiki-content group docutils container" id="main-content">
+<div class="panel docutils container">
+<div class="panelheader docutils container">
+<strong>Table of Contents</strong></div>
+<div class="panelcontent docutils container">
+<div class="toc-macro rbtoc1541196938266 docutils container">
+<ul class="simple">
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Introduction">Introduction</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Pre-InstallationCheck">Pre-Installation
+Check</a><ul>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-PlatformCompatibility">Platform
+Compatibility</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Hardware">Hardware</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Software">Software</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-AccessPermissions">Access
+Permissions</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Network">Network</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Installation">Installation</a><ul>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-1.ConfiguretheHostMachine">1. Configure the Host
+Machine</a><ul>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-AllocateaClusterGateway/Edge/ClientHostwithHDFSAccess">Allocate a Cluster Gateway/Edge/Client
+Host with HDFS
+Access</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-2.InstalltheUnravelServerRPMontheHostMachine">2. Install the Unravel Server RPM on the
+Host
+Machine</a><ul>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-GettheUnravelServerRPM">Get the Unravel Server
+RPM</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Makesymlinksifrequired">Make symlinks if
+required</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-InstalltheUnravelServerRPM">Install the Unravel Server
+RPM</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-DoHost-SpecificPost-InstallationActions">Do Host-Specific Post-Installation
+Actions</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-3.ConfigureUnravelServer(Basic/CoreOptions)">3. Configure Unravel Server (Basic/Core
+Options)</a><ul>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-EnableOptionalDaemons">Enable Optional
+Daemons</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-Modifyunravel.properties">Modify
+unravel.properties</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-IfKerberosisEnabled:">If Kerberos is
+Enabled:</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-IfRangerisEnabled:">If Ranger is
+Enabled:</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-DisableImpalaSensor">Disable Impala
+Sensor</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-4.ConvertYourUnravelInstallationtoHDP">4. Convert Your Unravel Installation to
+HDP</a><ul>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-RunthefollowingcommandsonUnravelServer:">Run the following commands on Unravel
+Server:</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-SwitchUser">Switch
+User</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-RestartUnravelServer">Restart Unravel
+Server</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-5.LogintoUnravelWebUI">5. Log into Unravel Web
+UI</a></li>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-6.ConfigureUnravelServer(AdvancedOptions)">6. Configure Unravel Server (Advanced
+Options)</a><ul>
+<li><a class="reference external" href="#Step1:InstallUnravelServeronHDP-EnableAdditionalDataCollection/Instrumentation">Enable Additional Data
+Collection/Instrumentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-introduction">Introduction</p>
+<p>This topic explains how to deploy Unravel Server 4.0 on HDP.
+These instructions apply to Unravel Server 4.0. For older
+versions of Unravel Server, contact Unravel Support.</p>
+<div class="panel docutils container">
+<div class="panelheader docutils container">
+<strong>Workflow Summary</strong></div>
+<div class="panelcontent docutils container">
+<ol class="arabic simple">
+<li>Pre-installation check</li>
+<li>Configure the host machine.</li>
+<li>Install the Unravel Server RPM on the host machine.</li>
+<li>Configure Unravel Server (basic/core options).</li>
+<li>Log into Unravel Web UI.</li>
+<li>(Optional) Configure Unravel Server (advanced
+options).</li>
+</ol>
+</div>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-pre-installationcheck">Pre-Installation Check</p>
+<p>The following installation requirements must be met for
+successful installation of Unravel.</p>
+<p class="rubric" id="step1-installunravelserveronhdp-platformcompatibility">Platform Compatibility</p>
+<ul class="simple">
+<li>HDP 2.2-2.6</li>
+<li>Hadoop 1.x - 2.x</li>
+<li>Kafka 0.9-1.0 (Apache ver. equiv.)</li>
+<li>Kerberos</li>
+<li>Hive 0.9.x - 1.2.x</li>
+<li>Spark 1.3.x - 2.2.x</li>
+</ul>
+<p class="rubric" id="step1-installunravelserveronhdp-hardware">Hardware</p>
+<ul class="simple">
+<li>Architecture: x86_64</li>
+<li>Cores: 8</li>
+<li>RAM: 64GB minimum, 128GB for medium volume (&gt;25,000 jobs
+per day), 256GB for high volume (&gt;50,000 jobs per day)</li>
+<li>Disk: <code class="docutils literal notranslate"><span class="pre">/usr/local/unravel</span></code>&nbsp;with 8GB free minimum (can
+be symlink)</li>
+<li>Disk: <code class="docutils literal notranslate"><span class="pre">/srv/unravel</span></code> with 500GB free minimum (can be
+symlink)</li>
+<li>For 60,000+ MR jobs per day, two or more gateway/edge
+nodes are recommended (“multi-host Unravel”)</li>
+</ul>
+<p class="rubric" id="step1-installunravelserveronhdp-software">Software</p>
+<ul class="simple">
+<li>Operating System: RedHat/Centos 6.4 - 7.4</li>
+<li><code class="docutils literal notranslate"><span class="pre">libaio.x86_64</span></code> installed</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELINUX=permissive</span></code>&nbsp;(or disabled) should be set in
+<code class="docutils literal notranslate"><span class="pre">/etc/selinux/config</span></code></li>
+<li>HDFS+Hive+YARN client/gateway, Hadoop and Hive commands
+in <code class="docutils literal notranslate"><span class="pre">PATH</span></code></li>
+<li>If Spark is in use, Spark client gateway</li>
+<li>Verify that all clients are installed by checking that
+RPMs are installed; Unravel utilizes clients and
+associated libraries</li>
+<li>You need to register edge node to Ambari</li>
+<li>LDAP (AD or Open LDAP) compatible for Unravel Web UI user
+authentication (Open signup by default)</li>
+<li>On Unravel Edge-node server, please&nbsp;<strong>do not</strong>&nbsp;have
+zookeeper installed in same server</li>
+</ul>
+<p class="rubric" id="step1-installunravelserveronhdp-accesspermissions">Access Permissions</p>
+<ul class="simple">
+<li>If Kerberos is in use, a keytab&nbsp;for principal hdfs (or
+read-only equivalent) is required for access to:<ul>
+<li>Access to YARN’s “done dir” in HDFS</li>
+<li>Access to YARN’s log aggregation directory in HDFS</li>
+<li>Access to Spark event log&nbsp;directory in HDFS</li>
+<li>Access to file sizes under HIve warehouse directory</li>
+</ul>
+</li>
+<li>Access to YARN Resource Manager REST API<ul>
+<li>principal needs right to find out which RM is active</li>
+</ul>
+</li>
+<li>JDBC access to the Hive Metastore (read-only user is
+sufficient)</li>
+<li>Application Timeline Server (ATS) read-only</li>
+</ul>
+<p class="rubric" id="step1-installunravelserveronhdp-network">Network</p>
+<ul class="simple">
+<li>Port 3000 from users and entire cluster to Unravel Web UI</li>
+<li>HDFS ports open from Hadoop cluster to Unravel Server(s)</li>
+<li>For YARN, Hive Metadata DB port open to Unravel Server(s)
+for partition reporting</li>
+<li>UDP and TCP port 4043 open from entire cluster to Unravel
+Server(s)</li>
+<li>For Oozie, port 11000 open from Unravel Server(s) to the
+Oozie server</li>
+<li>Resource Manager (RM) port 8032 from&nbsp;Unravel Server(s) to
+the RM server(s)</li>
+<li>ATS port 8188 from Unravel Servers(s) to ATS server(s)</li>
+<li>Port 4020, 4176, 4181 through 4189,&nbsp;3316, 4091 must be
+available for localhost communication between Unravel
+daemons or&nbsp;Unravel servers (if multi-host Unravel
+installation)</li>
+</ul>
+<p class="rubric" id="step1-installunravelserveronhdp-installation">Installation</p>
+<p class="rubric" id="step1-installunravelserveronhdp-1-configurethehostmachine">1. Configure the Host Machine</p>
+<p class="rubric" id="step1-installunravelserveronhdp-allocateaclustergateway-edge-clienthostwithhdfsaccess">Allocate a Cluster Gateway/Edge/Client Host with
+HDFS Access</p>
+<p>For HDP, use Ambari Web UI to create a Gateway node
+configuration.</p>
+<p class="rubric" id="step1-installunravelserveronhdp-2-installtheunravelserverrpmonthehostmachine">2. Install the Unravel Server RPM on the Host
+Machine</p>
+<div class="docutils container">
+<p class="rubric" id="step1-installunravelserveronhdp-gettheunravelserverrpm">Get the Unravel Server RPM</p>
+<p>See <a class="reference external" href="https://unraveldata.atlassian.net/wiki/spaces/UNDOCS/pages/226132074/Download+Unravel+Software+Versions">Download Unravel
+Software</a>.</p>
+<p class="rubric" id="step1-installunravelserveronhdp-makesymlinksifrequired">Make symlinks if required</p>
+<p>If you want the two disk areas used by Unravel to be on
+different volumes, you can make symlinks to specific
+areas before installing (or do
+a&nbsp;<code class="docutils literal notranslate"><span class="pre">mv</span></code>&nbsp;and&nbsp;<code class="docutils literal notranslate"><span class="pre">symlink</span></code>&nbsp;symlink after installing). Do
+it before the first install if there is insufficient
+space on the target paths&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel</span></code>
+and&nbsp;<code class="docutils literal notranslate"><span class="pre">/srv/unravel</span></code>&nbsp;noted above.</p>
+<p class="rubric" id="step1-installunravelserveronhdp-installtheunravelserverrpm">Install the Unravel Server RPM</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<p>The precise filename can vary, depending on how it was
+fetched or copied. The <code class="docutils literal notranslate"><span class="pre">rpm</span></code>&nbsp;command does not require
+.<code class="docutils literal notranslate"><span class="pre">rpm</span></code>&nbsp;suffix. The flag&nbsp;<code class="docutils literal notranslate"><span class="pre">-U</span></code>&nbsp;works for either
+initial install or upgrade.</p>
+<p>Run the specified&nbsp;<code class="docutils literal notranslate"><span class="pre">await_fixups.sh</span></code>&nbsp;script to make
+sure background processing is finished before you do
+other steps. In a routine upgrade, it is okay to start
+all Unravel daemons, but do not stop or restart them
+until the&nbsp;<code class="docutils literal notranslate"><span class="pre">await_fixups.sh</span></code>&nbsp;prints&nbsp;<code class="docutils literal notranslate"><span class="pre">Done</span></code>&nbsp;(it takes
+a few minutes).</p>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<div class="line-block">
+<div class="line">The installation
+creates&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/</span></code> which contains
+the executables, scripts, and settings.
+User&nbsp;<code class="docutils literal notranslate"><span class="pre">unravel</span></code> is created. The initial
+internal database and other durable state are put
+in&nbsp;<code class="docutils literal notranslate"><span class="pre">/srv/unravel/</span></code> for larger storage. By
+default, the installation supports YARN.</div>
+<div class="line">The master configuration file is
+in&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/etc/unravel.properties</span></code>
+and the logs are in <code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/logs/</span></code>.
+The RPM installation creates user&nbsp;<code class="docutils literal notranslate"><span class="pre">unravel</span></code>
+if it does not already
+exist;&nbsp;<code class="docutils literal notranslate"><span class="pre">/etc/init.d/unravel_*</span></code> scripts for
+controlling its services as well
+as&nbsp;<code class="docutils literal notranslate"><span class="pre">/etc/init.d/unravel_all.sh</span></code> which can be
+used to manually stop, start, and get status of
+all daemons in proper order.</div>
+<div class="line">The RPM installation also creates an HDFS
+directory for Hive Hook information collection.</div>
+<div class="line">During initial install, a bundled database is
+used. This can be switched to use an externally
+managed MySQL for production. (The bundled
+database root mysql password will be stored
+in&nbsp;<code class="docutils literal notranslate"><span class="pre">/root/unravel.install.include</span></code> during
+installation.)</div>
+</div>
+</div>
+</div></blockquote>
+<p class="rubric" id="step1-installunravelserveronhdp-dohost-specificpost-installationactions">Do Host-Specific Post-Installation Actions</p>
+<p>For HDP, there are no host-specific post-installation
+actions.</p>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-3-configureunravelserver-basic-coreoptions">3. Configure Unravel Server (Basic/Core Options)</p>
+<div class="docutils container">
+<p class="rubric" id="step1-installunravelserveronhdp-enableoptionaldaemons">Enable Optional Daemons</p>
+<p>Depending on your workload volume or kind of activity,
+you can enable optional daemons at this point.
+See&nbsp;<a class="reference external" href="Creating-Multiple-Workers-for-High-Volume-Data_541131395.html">Creating Multiple Workers for High Volume
+Data</a>.</p>
+<p class="rubric" id="step1-installunravelserveronhdp-modifyunravel-properties">Modify <code class="docutils literal notranslate"><span class="pre">unravel.properties</span></code></p>
+<ul>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/etc/unravel.properties</span></code>
+with <code class="docutils literal notranslate"><span class="pre">vi</span></code>.</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+<li><p class="first">Edit the values in&nbsp;<code class="docutils literal notranslate"><span class="pre">unravel.properties</span></code> using the
+guidelines and descriptions in the table below.</p>
+<div class="table-wrap docutils container">
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Example Values</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.adv</span>
+<span class="pre">ertised.url</span></code></td>
+<td>Defines the Unravel
+Server URL for HTTP
+traffic.</td>
+<td><a href="#id1"><span class="problematic" id="id2">``</span></a><a class="reference external" href="http://LAN_DNS:3000">http://LAN_DNS:3000</a>
+``</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.cus</span>
+<span class="pre">tomer.organization</span></code></td>
+<td>Identifies your
+installation for
+reporting purposes.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Company_and_org</span></code></td>
+</tr>
+<tr class="row-even"><td><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">com</span><span class="o">.</span><span class="n">unraveldata</span><span class="o">.</span><span class="n">tm</span>
+</pre></div>
+</div>
+<p class="last">pdir</p>
+</td>
+<td>Location where
+Unravel’s temp file
+will reside</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">unravel</span><span class="o">/</span><span class="n">tmp</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.his</span>
+<span class="pre">tory.maxSize.weeks</span></code></td>
+<td>Sets retention for
+search data.</td>
+<td><code class="docutils literal notranslate"><span class="pre">26</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.job</span>
+<span class="pre">.collector.done.log.b</span>
+<span class="pre">ase</span></code></td>
+<td>Only modifiable
+through Unravel Web
+UI’s configuration
+wizard.</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">mr</span><span class="o">-</span><span class="n">history</span><span class="o">/</span><span class="n">done</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.job</span>
+<span class="pre">.collector.log.aggreg</span>
+<span class="pre">ation.base</span></code></td>
+<td>Only modifiable
+through Unravel Web
+UI’s configuration
+wizard.</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">app</span><span class="o">-</span><span class="n">logs</span><span class="o">/*/</span><span class="n">logs</span><span class="o">/</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.log</span>
+<span class="pre">in.admins</span></code></td>
+<td>Defines the usernames
+that can access
+Unravel Web UI’s
+admin pages. Default
+is <code class="docutils literal notranslate"><span class="pre">admin</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">admin</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">com.unraveldata.s3.</span>
+<span class="pre">batch.monitoring.inte</span>
+<span class="pre">rval.sec</span></code></td>
+<td><strong>Optional</strong>. Defines
+the monitoring
+frequency. Default is
+300 seconds (5
+minutes). Set this
+property to 60 for
+lower latency.</td>
+<td><code class="docutils literal notranslate"><span class="pre">120</span></code></td>
+</tr>
+<tr class="row-even"><td><a href="#id3"><span class="problematic" id="id4">``</span></a>com.unraveldata.spa
+rk.eventlog.location`
+<a href="#id5"><span class="problematic" id="id6">`</span></a></td>
+<td>Where to find Spark
+event logs</td>
+<td><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdfs</span><span class="p">:</span><span class="o">///</span><span class="n">user</span><span class="o">/</span><span class="n">spark</span>
+</pre></div>
+</div>
+<p class="last">/applicationHistory/,
+hdfs:///user/spark/sp
+arkApplicationHistory
+/,hdfs:///user/spark/
+spark2ApplicationHist
+ory/</p>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">yarn.resourcemanage</span>
+<span class="pre">r.webapp.address</span></code></td>
+<td>YARN resource manager
+web address URL</td>
+<td><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">loc</span>
+</pre></div>
+</div>
+<p class="last">aldomain:8088</p>
+</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">oozie.server.url</span></code></td>
+<td>Oozie URL</td>
+<td><div class="first highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">loc</span>
+</pre></div>
+</div>
+<p class="last">aldomain:11000/oozie</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-ifkerberosisenabled">If Kerberos is Enabled:</p>
+<div class="expand-container docutils container" id="expander-1842118070">
+<div class="expand-control docutils container" id="expander-control-1842118070">
+<p>Add authentication for HDFS…</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1842118070">
+<p>Create or identify a principal and keytab for
+Unravel daemons to access HDFS and REST when
+Kerberos is enabled.</p>
+<p>To get going faster, you can use the ‘hdfs’
+principal which often has a pre-existing
+“headless” keytab.</p>
+<p>Add properties for Kerberos
+in&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/etc/unravel.properties</span></code>
+(substitute correct filename and principal):</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<p>You can verify the principal in a keytab by
+using&nbsp;<code class="docutils literal notranslate"><span class="pre">properties&nbsp;klist</span> <span class="pre">-kt</span> <span class="pre">KEYTAB_FILE</span></code><em>.</em>
+The keytab file should have chmod bits 500 and
+be owned by ‘unravel’ local user (default) or by
+the user you want to use, as explained in&nbsp;<a class="reference external" href="541131652.html">Run
+Unravel Daemons with Custom
+User</a>.</p>
+</div>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-ifrangerisenabled">If Ranger is Enabled:</p>
+<div class="expand-container docutils container" id="expander-1683274762">
+<div class="expand-control docutils container" id="expander-control-1683274762">
+<p>Add these permissions…</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1683274762">
+<p>For quicker setup, use the hdfs principal. For
+more narrow privileges, define your own alt
+principal. The alt user can
+be&nbsp;<code class="docutils literal notranslate"><span class="pre">unravel</span></code>&nbsp;(created by&nbsp;<code class="docutils literal notranslate"><span class="pre">rpm</span></code>) or one
+of your choosing. The corresponding kerberos
+principal does not need to have the same name as
+the local user. The user/principal here should
+correspond to the&nbsp;<code class="docutils literal notranslate"><span class="pre">X</span></code>&nbsp;&nbsp;in the switch-user
+section below.</p>
+<div class="table-wrap docutils container">
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="8%" />
+<col width="9%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Resource</th>
+<th class="head">Pri
+nci
+pal</th>
+<th class="head">Acce
+ss</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">hdfs://spark-history</span></code></td>
+<td>hdf
+s</td>
+<td>read
++exe
+cute</td>
+<td>Spark event log</td>
+</tr>
+<tr class="row-odd"><td>hdfs://spark2-history</td>
+<td>hdf
+s</td>
+<td>read
++exe
+cute</td>
+<td>Spark2 event log</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">hdfs://mr-history/done</span></code></td>
+<td>hdf
+s</td>
+<td>read
++exe
+cute</td>
+<td>MapReduce logs</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">hdfs://app-logs</span></code></td>
+<td>hdf
+s</td>
+<td>read
++exe
+cute</td>
+<td>YARN aggregation folder</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">hdfs://apps/hive/warehou</span>
+<span class="pre">se</span> <span class="pre">(default</span> <span class="pre">value</span> <span class="pre">of&nbsp;hive.</span>
+<span class="pre">metastore.warehouse.dir)</span></code></td>
+<td>hdf
+s</td>
+<td>read
++exe
+cute</td>
+<td>Obtain table partition
+sizes</td>
+</tr>
+<tr class="row-odd"><td>Hive Metastore database
+GRANT</td>
+<td>hiv
+e</td>
+<td>read
++exe
+cute</td>
+<td>Hive table information</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-disableimpalasensor">Disable Impala Sensor</p>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+<p>Impala is not officially supported on HDP
+clusters therefore you should disable the
+ImpalaSensor by modifying
+the&nbsp;<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/etc/unravel.properties</span></code>&nbsp;file
+on Unravel Server:</p>
+</div>
+</div></blockquote>
+<p>Open&nbsp;<code class="docutils literal notranslate"><span class="pre">unravel.properties&nbsp;``\</span> <span class="pre">file.&nbsp;</span> <span class="pre">Locate</span> <span class="pre">or</span>
+<span class="pre">add&nbsp;\</span> <span class="pre">``com.unraveldata.sensor.tasks.disabled</span></code>&nbsp; and
+set it as shown:</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-4-convertyourunravelinstallationtohdp">4. Convert Your Unravel Installation to HDP</p>
+<div class="docutils container">
+<p class="rubric" id="step1-installunravelserveronhdp-runthefollowingcommandsonunravelserver"><strong>Run the following commands on Unravel
+Server:</strong></p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+Note: This change will stick after later RPM
+upgrades; it does not need to be done each time.</div>
+</div></blockquote>
+<p class="rubric" id="step1-installunravelserveronhdp-switchuser">Switch User</p>
+<p>Depending on your cluster security configuration, you
+will need to run the
+<a class="reference external" href="Run-Unravel-Daemons-with-Custom-User_541033161.html">switch_to_user</a>&nbsp;script.
+Dependencies like kerberos and which target user you used
+for Ranger affect this.</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<p>where&nbsp;<code class="docutils literal notranslate"><span class="pre">X</span></code>&nbsp;&nbsp;and&nbsp;<code class="docutils literal notranslate"><span class="pre">Y</span></code>&nbsp;depend on your environment. See
+<a class="reference external" href="Run-Unravel-Daemons-with-Custom-User_541033161.html">switch_to_use</a>
+page.</p>
+<p class="rubric" id="step1-installunravelserveronhdp-restartunravelserver">Restart Unravel Server</p>
+<p>After edits to <code class="docutils literal notranslate"><span class="pre">com.unraveldata.login.admins</span></code> in
+<code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/etc/unravel.properties</span></code> it is
+necessary to run the following script in order to make
+changes take effect. The <code class="docutils literal notranslate"><span class="pre">echo</span></code> command shows the page
+to visit with your browser. If you are using an ssh
+tunnel or http proxy, you might need to make adjustments.
+<code class="docutils literal notranslate"><span class="pre">UNRAVEL_HOST_IP</span></code> is a fully qualified DNS or IP
+Address.</p>
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+<p>This completes the basic/core configuration.</p>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-5-logintounravelwebui">5. Log into Unravel Web UI</p>
+<div class="docutils container">
+<p>Using a web browser, navigate to
+<code class="docutils literal notranslate"><span class="pre">http://{UNRAVEL_</span></code><code class="docutils literal notranslate"><span class="pre">HOST</span></code>_IP}:3000 and login as
+user “<code class="docutils literal notranslate"><span class="pre">admin&quot;</span></code> with password <code class="docutils literal notranslate"><span class="pre">&quot;unraveldata</span></code>”.</p>
+<p>confluence-information-macro confluence-information-macro-note</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+For the free trial version, use the Chrome web
+browser.</div>
+</div></blockquote>
+<p><strong>Congratulations!</strong></p>
+<p>Unravel Server is up and running. Unravel Web UI displays
+collected data. For instructions on using Unravel Web UI,
+see the <a class="reference external" href="User-Guide_541295329.html">User Guide</a>.</p>
+</div>
+<p class="rubric" id="step1-installunravelserveronhdp-6-configureunravelserver-advancedoptions">6. Configure Unravel Server (Advanced Options)</p>
+<div class="docutils container">
+<p class="rubric" id="step1-installunravelserveronhdp-enableadditionaldatacollection-instrumentation">Enable Additional Data
+Collection/Instrumentation</p>
+<p>Install the Unravel Sensor Parcel on gateway/edge/client
+nodes that are used to submit Hive queries to push
+additional information to Unravel Server. For details,
+see <a class="reference external" href="561709534.html">Step 2: Enable Additional Data Collection /
+Instrumentation for HDP</a>.</p>
+</div>
+</div>
+<div class="pagesection group docutils container">
+<div class="pagesectionheader docutils container">
+<p class="pagesectiontitle rubric" id="attachments">Attachments:</p>
+</div>
+<div class="greybox docutils container">
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image0" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541098908/541393753.png">image2017-2-26_0-20-12.png</a>
+(image/png)</div>
+</div>
+</div>
+</div>
+<div class="docutils container" id="footer">
+<div class="section footer-body docutils container">
+<p>Document generated by Confluence on Nov 02, 2018 15:15</p>
+<div class="docutils container" id="footer-logo">
+<a class="reference external" href="http://www.atlassian.com/">Atlassian</a></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">UN45</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation-cdh.html">Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation-hdp.html">Hortonworks Data Platform (HDP)</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Step 1: Install Unravel Server on HDP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation-hdp-step2.html">Step 2: Enable Additional Data Collection / Instrumentation for HDP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation-mapr.html">MapR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-amazonemr.html">Amazon Elastic MapReduce (Amazon EMR)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#id1">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html#id1">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html#id1">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="installation.html">Installation</a><ul>
+  <li><a href="installation-hdp.html">Hortonworks Data Platform (HDP)</a><ul>
+      <li>Previous: <a href="installation-hdp.html" title="previous chapter">Hortonworks Data Platform (HDP)</a></li>
+      <li>Next: <a href="installation-hdp-step2.html" title="next chapter">Step 2: Enable Additional Data Collection / Instrumentation for HDP</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Unravel Data. All rights reserved.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/installation-hdp-step1.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

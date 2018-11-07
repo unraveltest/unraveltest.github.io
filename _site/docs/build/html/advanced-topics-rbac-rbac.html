@@ -1,0 +1,327 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Role Based Access Control (RBAC) &#8212; UN45  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendices" href="appendices.html" />
+    <link rel="prev" title="Roles and Role Based Access Control" href="advanced-topics-rbac.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="role-based-access-control-rbac">
+<h1>Role Based Access Control (RBAC)<a class="headerlink" href="#role-based-access-control-rbac" title="Permalink to this headline">¶</a></h1>
+<div class="docutils container" id="page">
+<div class="aui-page-panel docutils container" id="main">
+<div class="docutils container" id="main-header">
+<div class="docutils container" id="breadcrumb-section">
+<ol class="arabic simple">
+<li><a class="reference external" href="index.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Unravel-4.4_541197025.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Advanced-Topics_541197049.html">Advanced Topics</a></li>
+<li><a class="reference external" href="Roles-and-Role-Based-Access-Control_541197074.html">Roles and Role Based Access
+Control</a></li>
+</ol>
+</div>
+<p class="pagetitle rubric" id="title-heading">Unravel 4.4 : Role Based Access Control (RBAC)</p>
+</div>
+<div class="view docutils container" id="content">
+<div class="page-metadata docutils container">
+Created by katch, last modified on Oct 16, 2018</div>
+<div class="wiki-content group docutils container" id="main-content">
+<p>Role Based Access Control allows Admin to limit what a
+specific end-user can access based upon tags/defaults. See
+the<a class="reference external" href="https://unraveldata.atlassian.net/wiki/spaces/UN43/pages/541393167/Supported+Roles#SupportedRoles-RBAC-Roles">Role
+Matrix</a>for
+a description of the various roles.</p>
+<p>When RBAC mode is enabled a end-users’ access to the Unravel
+UI is filtered by tags. Two different modes are available:</p>
+<ul class="simple">
+<li>Extended Mode<ul>
+<li><a class="reference external" href="The-Applications-Page_541164197.html#TheApplicationsPage-ApplicationsTab">Application |
+Applications</a>,</li>
+<li><a class="reference external" href="The-Operations-Page_541033301.html#TheOperationsPage-ChartsResources">Operations | Usage Details |
+Infrastructure</a>,</li>
+<li><dl class="first docutils">
+<dt><a href="#id1"><span class="problematic" id="id2">`</span></a>Operations | Usage Details | Impala Usage</dt>
+<dd>&lt;<a class="reference external" href="http://The%20Operations%20Page#Impala">http://The%20Operations%20Page#Impala</a>&gt;`__</dd>
+</dl>
+</li>
+<li><a class="reference external" href="http://The%20Reports%20Page#Chargeback">Reports | Operational Insights |
+Chargeback</a></li>
+</ul>
+</li>
+<li>Restricted mode<ul>
+<li><a class="reference external" href="The-Applications-Page_541164197.html#TheApplicationsPage-ApplicationsTab">Application |
+Applications</a></li>
+</ul>
+</li>
+</ul>
+<p>You can always toggle the status of RBAC via the UIX;
+however the unravel
+property<code class="docutils literal notranslate"><span class="pre">com.unraveldata.login.mode</span></code>determines if you
+use the UIX to add or edit end-user roles. When the property
+is setto&nbsp;<code class="docutils literal notranslate"><span class="pre">ldap</span></code>&nbsp;the UIX can’t be used to add or edit
+end-user roles, see<a class="reference external" href="Supported-Roles_541360915.html#SupportedRoles-RBAC_LDAP">LDAP Supported
+Roles</a>.</p>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-1-gotomanage-rolemanagerforaccesstotherolemanager">1. Go to Manage | Role Manager for access to
+the Role Manager.</p>
+<p>The RBAC default is set via
+<code class="docutils literal notranslate"><span class="pre">com.unraveldata.rbac.enabled.</span></code> You can toggle the status
+of RBAC; however, when the unravel daemon is restarted RBAC
+resets.</p>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-2-oncerbacisactivatedyoucanaddfiltersforspecificend-users">2. Once RBAC is activated you can add filters
+for specific end-users.</p>
+<p>Any end-user roles you have previously set are displayed. If
+the Unravel daemon was restarted after you added end-user
+roles, those entries are lost. You can add end-users one at
+at time via Add New Role or one or more filters at a time by
+uploading a role file (.``csv``).&nbsp; If the
+“<code class="docutils literal notranslate"><span class="pre">login.mode</span></code>” is set to <code class="docutils literal notranslate"><span class="pre">ldap</span></code> the “Select role
+file” box and Add New Role button is not displayed.</p>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-3-addingroles">3. Adding Roles</p>
+<p>You limit end-user access through tags. In the example below
+only two tags are available, <em>project</em> and <em>tenant</em>. If a
+3rd tag, <em>department</em>, had been defined would be available.
+The end-user filter between the red brackets were loaded
+using a .<code class="docutils literal notranslate"><span class="pre">csv</span></code> file.</p>
+<div class="docutils container">
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+The tags used here must also be loaded as
+<a class="reference external" href="Creating-Application-Tags_541295262.html">Application</a>&nbsp;<a class="reference external" href="Tagging-Workflows_541327954.html">Tagging
+Workflows</a>
+tags. If they are not, end-users with defined roles
+can not see any applications since their view is
+based on tags.</div>
+</div></blockquote>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-addroledirectly">Add role directly</p>
+<p>Clicking on Add New Role adds a row to the Roles table
+containing text boxes (1). You must define the User and at
+least one tag restriction. To add multiple tag names under a
+tag type separate the tag names with commas, be sure the
+string contains no spaces or special characters. To save the
+entry click the save glyph (). To delete your new entry
+click the delete glyph ().</p>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-addoneormorerolesviaarolefile">Add one or more roles via a role file</p>
+<p>Click on the <strong>Select role file</strong> to chose the .<code class="docutils literal notranslate"><span class="pre">csv</span></code>
+file.The format of a .<code class="docutils literal notranslate"><span class="pre">csv</span></code> is as follows:</p>
+<ul class="simple">
+<li><strong>first row is a header row defining the columns tags</strong>:
+<code class="docutils literal notranslate"><span class="pre">user,</span></code><code class="docutils literal notranslate"><span class="pre">tagKey[,tagKey]*</span></code><ul>
+<li><strong>``tagKey``</strong>: is a valid tag key, i.e., department,
+tenant.</li>
+</ul>
+</li>
+<li><strong>one or more rows defining user and tag values</strong>:
+<code class="docutils literal notranslate"><span class="pre">user,</span></code><code class="docutils literal notranslate"><span class="pre">tagValue[,tagValue</span></code><code class="docutils literal notranslate"><span class="pre">]*</span></code><ul>
+<li><strong>``tagValue``</strong>: is empty, a valid tag value for
+<code class="docutils literal notranslate"><span class="pre">tagType</span></code>, or <code class="docutils literal notranslate"><span class="pre">tagString</span></code>,</li>
+<li><strong>``tagString``</strong>: is a series of&nbsp;<code class="docutils literal notranslate"><span class="pre">tagValue</span></code>s
+separated by commas and enclosed in quotes, and</li>
+<li><strong>*</strong>: means zero or more</li>
+</ul>
+</li>
+</ul>
+<div class="docutils container">
+<p>confluence-information-macro has-no-icon confluence-information-macro-information</p>
+<blockquote>
+<div><p>Note:</p>
+<div class="confluence-information-macro-body docutils container">
+<p>&nbsp;The file <em>must</em> define at least one tag key, one
+user and one tag value for the <code class="docutils literal notranslate"><span class="pre">user</span></code>.</p>
+<p>After you add your last <code class="docutils literal notranslate"><span class="pre">tagValue&nbsp;``\</span> <span class="pre">you</span> <span class="pre">can</span>
+<span class="pre">leave</span> <span class="pre">the</span> <span class="pre">rest</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">row</span> <span class="pre">blank.</span> <span class="pre">See</span> <span class="pre">the&nbsp;userNew</span>
+<span class="pre">filter</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">``.csv</span></code> file below for an example .</p>
+<p><code class="docutils literal notranslate"><span class="pre">tagValue</span></code>s must be ordered as defined in the
+header row.</p>
+<p>No special characters or spaces are allowed in
+file.</p>
+</div>
+</div></blockquote>
+</div>
+<p>The .<code class="docutils literal notranslate"><span class="pre">csv</span></code> file below was used to load filters within
+the red brackets.</p>
+<div class="docutils container">
+<div class="code panel pdl docutils container">
+<div class="codecontent panelcontent pdl docutils container">
+</div>
+</div>
+</div>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-4-editingordeletingroles">4. Editing or Deleting Roles</p>
+<p>To edit a role, click the edit glyph (). You may edit the
+tags adding or deleting, but you can not edit the end-user’s
+name.</p>
+<p>To delete a role, click the delete glyph.</p>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-effectofroleaccesscontrol">Effect of Role Access Control</p>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-end-user-saccesswithrbacturnedoff">End-user’s Access with RBAC turned off</p>
+<p>The user has access to all the Unravel UI features and all
+applications.</p>
+<p class="rubric" id="rolebasedaccesscontrol-rbac-end-user-saccesswithrbacturnedon">End-user’s Access with RBAC turned on.</p>
+</div>
+<div class="pagesection group docutils container">
+<div class="pagesectionheader docutils container">
+<p class="pagesectiontitle rubric" id="attachments">Attachments:</p>
+</div>
+<div class="greybox docutils container">
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image0" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541131426/541360905.png">Save.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image1" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541131426/541229611.png">closeCross.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image2" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541131426/541131434.png">RBAC-Add
+Role.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image3" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541131426/541393583.png">RBAC-Access.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image4" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541131426/541098665.png">Edit.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image5" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541131426/541360909.png">RBAC-ExampleWithLoadByCSV.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image6" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541131426/541229615.png">RBAC-OffEnduserView.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image7" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541131426/541197078.png">RBAC-OffApplication.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image8" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541131426/541328094.png">4.3 RBAC feature
+guide.png</a>
+(image/png)</div>
+</div>
+</div>
+</div>
+<div class="docutils container" id="footer">
+<div class="section footer-body docutils container">
+<p>Document generated by Confluence on Nov 02, 2018 15:18</p>
+<div class="docutils container" id="footer-logo">
+<a class="reference external" href="http://www.atlassian.com/">Atlassian</a></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">UN45</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#id1">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html#id1">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced-topics.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="advanced-topics-rbac.html">Roles and Role Based Access Control</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Role Based Access Control (RBAC)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html#id1">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="advanced-topics.html">Advanced Topics</a><ul>
+  <li><a href="advanced-topics-rbac.html">Roles and Role Based Access Control</a><ul>
+      <li>Previous: <a href="advanced-topics-rbac.html" title="previous chapter">Roles and Role Based Access Control</a></li>
+      <li>Next: <a href="appendices.html" title="next chapter">Appendices</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Unravel Data. All rights reserved.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/advanced-topics-rbac-rbac.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

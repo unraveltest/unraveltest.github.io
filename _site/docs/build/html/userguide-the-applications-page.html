@@ -1,0 +1,1695 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Applications Page &#8212; UN45  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Topics" href="advanced-topics.html" />
+    <link rel="prev" title="The Operations Page" href="userguide-the-operations-page.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-applications-page">
+<h1>The Applications Page<a class="headerlink" href="#the-applications-page" title="Permalink to this headline">¶</a></h1>
+<div class="docutils container" id="page">
+<div class="aui-page-panel docutils container" id="main">
+<div class="docutils container" id="main-header">
+<div class="docutils container" id="breadcrumb-section">
+<ol class="arabic simple">
+<li><a class="reference external" href="index.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Unravel-4.4_541197025.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="User-Guide_541295329.html">User Guide</a></li>
+</ol>
+</div>
+<p class="pagetitle rubric" id="title-heading">Unravel 4.4 : The Applications Page</p>
+</div>
+<div class="view docutils container" id="content">
+<div class="page-metadata docutils container">
+Created by katch, last modified by Tasos Arvanitis on Oct
+23, 2018</div>
+<div class="wiki-content group docutils container" id="main-content">
+<div class="panel docutils container">
+<div class="panelheader docutils container">
+<strong>Table of Contents</strong></div>
+<div class="panelcontent docutils container">
+<div class="toc-macro rbtoc1541197003307 docutils container">
+<ul class="simple">
+<li><a class="reference external" href="#TheApplicationsPage-ApplicationsTabApplicationsTab">Applications
+Tab</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-FindingAppsFindingApplications">Finding
+Applications</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-WorkflowTabWorkflowTab">Workflow
+Tab</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-SessionsTab">Sessions
+Tab</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-CreatingaSession">Creating a
+Session</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-ManualSession">Manual
+Session</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-AutoTuneSession">Auto Tune
+Session</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-ViatheEventsPanel">Via the Events
+Panel</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-Session">Session</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-TypicalAPMLayoutTypicalApplicationManager'sLayout">Typical Application Manager’s
+Layout&nbsp;</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Application-SpecificManagers">Application-Specific
+Managers</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-CascadingCascadingandPigApplicationManagers">Cascading and Pig Application
+Managers</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-KeyPerformanceIndicators">Key Performance
+Indicators</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Tabs">Tabs</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-HiveAPMHiveApplicationManager">Hive Application
+Manager</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-KeyPerformanceIndicators.1">Key Performance
+Indicators</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Tabs.1">Tabs</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-ImpalaAPMImpalaApplicationManager">Impala Application
+Manager</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-KeyPerformanceIndicators.2">Key Performance
+Indicators</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Tabs.2">Tabs</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-KafkaAPMKafkaApplicationManager">Kafka Application
+Manager</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-KeyPerformanceIndicators.3">Key Performance
+Indicators</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-ClusterView">Cluster
+View</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-ConsumerGroupView">Consumer Group
+View</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-KInsightsUnravelInsightsforKafka">Unravel Insights for
+Kafka</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-MapReduceAPMMapReduceApplicationManager">MapReduce Application
+Manager</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-KeyPerformanceIndicators.6">Key Performance
+Indicators</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Tabs.3">Tabs</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-SparkApplicationManager">Spark Application
+Manager</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-TezAPMTezApplicationManager">Tez Application
+Manager</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-KeyPerformanceIndicators.7">Key Performance
+Indicators</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Tabs.4">Tabs</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-WorkflowAPMWorkflowManager">Workflow
+Manager</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-KeyPerformanceIndicators.8">Key Performance
+Indicators</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Tabs.5">Tabs</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-EventPanelEventPanelExamples">Event Panel
+Examples</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-Recommendations">Recommendations</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-Efficiency">Efficiency</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-MapReduceJobExample">MapReduce Job
+Example</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-TezDAGExample">Tez DAG
+Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheApplicationsPage-Appendices">Appendices</a><ul>
+<li><a class="reference external" href="#TheApplicationsPage-EventList">Event
+List</a></li>
+<li><a class="reference external" href="#TheApplicationsPage-ResourceMetrics">Resource
+Metrics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<p>The <strong>Applications</strong> page is the main interface for locating
+your applications and analyzing their performance. Unravel
+supports both ad-hoc applications, and repeatedly running
+workflows or data pipelines.</p>
+<ul class="simple">
+<li>Ad-hoc applications are Hive queries, MapReduce jobs,
+Spark applications, Impala queries, and so on; these are
+generated by end user tools (such as BI tools like
+Tableau, Microstrategy, etc.) or submitted via CLI.</li>
+<li>Repeatedly running workflows or data pipelines are
+created using <code class="docutils literal notranslate"><span class="pre">cron</span></code> or schedulers like Oozie, AirFlow,
+or ETL tools like Informatica, Pentaho and others.</li>
+</ul>
+<p>Unravel currently supports the the following application
+frameworks:</p>
+<ul class="simple">
+<li>Cascading/Pig</li>
+<li>Hive (on Map-Reduce)</li>
+<li>Kafka</li>
+<li>Impala</li>
+<li>Map-Reduce</li>
+<li>Tez</li>
+<li>Hive (on Tez)</li>
+<li>Spark<ul>
+<li>Native</li>
+<li>Spark Streaming</li>
+<li>SparkSQL</li>
+</ul>
+</li>
+</ul>
+<p>(lightbulb) Your application’s performance and reliability
+depends on several factors such as quality of the code,
+types of joins used, configuration settings, data size,
+scheduler settings, contention with other applications, etc.
+It takes significant expertise and effort to get to the root
+cause(s) of an application’s problems. Unravel’s
+Intelligence Engine&nbsp;provides insights into your
+application’s run to help resolve it’s
+problems/inefficiencies. These insights are called <em>events</em>.
+For more information about events, see the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a>.</p>
+<p>The Applications Page has three tabs:</p>
+<ul class="simple">
+<li>Applications,</li>
+<li>Workflows, and</li>
+<li>Sessions</li>
+</ul>
+<p>confluence-information-macro has-no-icon confluence-information-macro-note</p>
+<blockquote>
+<div><p>Note</p>
+<div class="confluence-information-macro-body docutils container">
+Click <a class="reference external" href="Common-UI-Features_541295593.html">here</a> for
+common features used throughout Unravel’s UI.</div>
+</div></blockquote>
+<p class="rubric" id="theapplicationspage-applicationstabapplicationstab">Applications Tab</p>
+<p>By default this tab lists all applications for the past
+week. However, this view initially search results are
+ordered by the most recent start time. To reorder the
+results by another property, click the appropriate header in
+the results table.</p>
+<p class="rubric" id="theapplicationspage-findingappsfindingapplications">Finding Applications</p>
+<p>You can search for your application(s) in a variety of ways:</p>
+<ul class="simple">
+<li>The left sidebar allows you to filter you <strong>App Name</strong>,
+<strong>App type</strong>, <strong>Status</strong>, <strong>Tags</strong> (if any)<strong>,</strong>
+<strong>Queue</strong>, <strong>User</strong>, <strong>Cluster</strong>, <a href="#id1"><span class="problematic" id="id2">**</span></a>Duration&nbsp;<a href="#id3"><span class="problematic" id="id4">**</span></a>(Min and
+Max duration), and <a href="#id5"><span class="problematic" id="id6">**</span></a>Number of Events.&nbsp;**</li>
+<li>By <strong>time period,</strong> including&nbsp;specifying custom range by
+dates and times, using the date picker or scroll by page
+(1).</li>
+</ul>
+<p>If the job is part of a Hive query, Pig script, or a
+Workflow, a link to it is noted in the job’s <strong>Go To</strong>
+column (2). Clicking on the application (3) takes you to the
+application’s program manager (APM), i.e., MapReduce,
+Impala.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="theapplicationspage-workflowtabworkflowtab">Workflow Tab</p>
+<p>The layout of this window mirrors the <strong>Applications</strong> tab
+above. When there are no workflows tagged, the table is
+empty. You can use the date picker to select a date and time
+range. You can search for a workflow by name, enter the
+string in the search box; any user or workflow name matching
+or containing the string is displayed. Click on the workflow
+name to bring it up in the <a class="reference external" href="#TheApplicationsPage-WorkflowAPM">Workflow Manager Application
+Manager.</a></p>
+<p>Click <strong>Add Workflow</strong> for a popup window listing all, if
+any, untagged workflows. The number of untagged workflows is
+noted in the title bar. Click on the radio button next to
+the workflow(s) you wish to add. Click <strong>Add</strong> <strong>Selected
+Workflows</strong>. Your changes are lost when closing the window
+before clicking <strong>Add</strong> <strong>Selected Workflows.</strong></p>
+<p class="rubric" id="theapplicationspage-sessionstab">Sessions Tab</p>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+This Report does not work with Postgres. You must be
+using MySQL and have the <a class="reference external" href="https://unraveldata.atlassian.net/wiki/spaces/UN44/pages/575734636/Install+or+Upgrade+OnDemand+Package">OnDemand package
+installed</a>.</div>
+</div></blockquote>
+<p>Sessions allows you to run your application expressly to
+tuneits performance for:</p>
+<ul class="simple">
+<li>efficiency: decrease the application’s time (end-to end
+duration) and resources (shortening duration is first
+priority), or</li>
+<li>reliability: in attempting to reduce resources
+Unravelprioritizes memory allocation to ensure the
+application doesn’t fail due to “out of memory”
+exceptions.</li>
+</ul>
+<p>Why use sessions when Unravel already offers insights and
+recommendations on an application’s run?</p>
+<ul class="simple">
+<li>You direct the tuning goal.</li>
+<li>You can provide multiple runs of an application providing
+a larger data pool for Unravel to analyze.</li>
+<li>You can have Unravel apply the recommendations for you
+and run the newly configured application.</li>
+<li>You can see the effects, both positive and negative, the
+tuning has on an applications run.</li>
+<li>You can compare runs configurations.</li>
+<li>You can repeatedly tune the application until Unravel has
+no more recommendations.</li>
+<li>Your session is saved and can be run again, e.g., new
+runs added, cluster configuration changed.</li>
+</ul>
+<p>You can tune:</p>
+<ul class="simple">
+<li>Spark</li>
+<li>Hive on MapReduce</li>
+</ul>
+<p>Sessions can serve simply as a tool to compare two runs of
+the same application.</p>
+<p>The Sessions tabs opens displaying all current sessions
+sorted on <strong>Sessions Name</strong> in ascending order. The <strong>Start
+Time</strong> is the time of the latest application run. <strong>Number
+of Apps</strong> is the number of runs inside the Session.&nbsp; Some of
+these runs were added when the Session was created and some
+were created by Sessions when it applied it recommendations.</p>
+<p>The four (4) KPI’s <strong>Duration</strong>, <strong>IO</strong>, <strong>vCore Seconds</strong>,
+and <strong>Memory Seconds</strong> are essentially what the fine tuning
+hopes to minimize. The column contains a trend line which
+plots all the apps (vertices) contained in the Session.
+Beneath the trend line, the average&nbsp;and the best value is
+noted. For example, VCore9, has 3 apps , for <strong>Duration</strong>
+the average is 19m 24s and the best time was 38.31% better
+than this. You can not draw the conclusion that the same app
+performed best for each KPI.&nbsp; Last the <strong>Cluster ID</strong> is
+listed. You can sort the table on Session Name, Start Time
+and Cluster. Click on the edit button to edit the session.</p>
+<p>You can search for a session by name. Enter the string in
+the search box;&nbsp; any session name matching or containing the
+string will be displayed.</p>
+<p class="rubric" id="theapplicationspage-creatingasession"><strong>Creating a Session</strong></p>
+<p>You can uses sessions</p>
+<ul class="simple">
+<li><strong>manually</strong> - where you actively control the analysis
+and application of recommendations, or</li>
+<li><strong>automatically</strong> - where sessions performs the
+iterations without you intervention until it reaches the
+maximum allowed runs or finds no more recommendations</li>
+</ul>
+<p class="rubric" id="theapplicationspage-manualsession"><strong>Manual Session</strong></p>
+<p>Click <strong>Create Session.&nbsp;** You must name your session, it
+does not have to be unique but we recommend you do so. Chose
+the **Application Type</strong> and <strong>Tuning Goal</strong> from the
+pull-down menu and the tuning goal.&nbsp; Add the <strong>App
+IDs&nbsp;**of the application(s) you want to tune you. Click
+**+Add another App ID</strong> to add more apps. Click to delete an
+App ID. Click <strong>Add</strong> to create the session.</p>
+<p>If you are tuning a Spark App you must supply the JAR path
+and Class Name.</p>
+<p class="rubric" id="theapplicationspage-autotunesession"><strong>Auto Tune Session</strong></p>
+<p>You have the additional option to specify the maximum number
+of runs.&nbsp; If not specified, iterates continues until no
+recommendations are available.&nbsp; When specified, the
+iteration stops at the maximum number or lack of
+recommendations, whichever comes first.</p>
+<p class="rubric" id="theapplicationspage-viatheeventspanel"><a href="#id7"><span class="problematic" id="id8">**</span></a>Via the Events Panel
+**</p>
+<p>If an applications has
+<a class="reference external" href="#TheApplicationsPage-EventPanel">events</a> with
+recommendations you can create a session directly from the
+recommendations tab. You can create either a manual or auto
+tune session. Click the type of session you wish to create
+and session popup is filled out except for the session name.</p>
+<p class="rubric" id="theapplicationspage-session">Session</p>
+<p>The Sessions APM layout is similar to all APMs.&nbsp; Instead of
+KPIs reflecting the Application, Sessions KPI’s are trends
+which graph the&nbsp; various runs resource usages measured when
+tuning, duration, IO, and resources. The example below is a
+session view immediately after creation.</p>
+<p>The left tab, <strong>Applications</strong> is the list of runs;
+initially it is whatever was loaded when the session was
+created. As analysis and application of recommendations
+occur more runs are added.</p>
+<p><strong>Right Tabs</strong></p>
+<ul class="simple">
+<li><strong>Progress Tab -</strong> Keeps a log of all the activity.&nbsp; See
+example above.</li>
+<li><strong>Trends</strong> - Expanded graphs of Duration, IO, Resources</li>
+<li><strong>Compare -</strong> Allows you to compare two of the runs.</li>
+</ul>
+<p>See Sessions Use Case for more information on using this
+feature.</p>
+<p class="rubric" id="theapplicationspage-typicalapmlayouttypicalapplicationmanager-slayout">Typical Application Manager’s Layout</p>
+<ul class="simple">
+<li>A black title bar notes the&nbsp;application type, i.e.,
+Spark, Impala, MapReduce, Fragment, etc) and the job ID.
+On the right side of the title bar are glyphs for adding
+a comment, and to minimize or close the tile if possible.
+If the jobs has a parent, i.e., Hive, Pig, there will be
+a arrow with the parent’s type. Clicking on it brings up
+its APM.</li>
+<li>Unravel’s Intelligence Engine can&nbsp;provide insights into
+an application and may provide recommendations,
+suggestions and insights on how to improve the
+application’s run. When there are insights a bar appears
+immediately below the title bar. If Unravel has
+recommendations the insight bar is orange, otherwise it’s
+blue. For more information about events, see the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event
+Panel Examples</a>.</li>
+<li>The next section contains general job information and Key
+Performance Indicators (KPIs) (as applicable)</li>
+<li><strong>Event icon</strong>: notes the number of events the job had.
+<strong>No Events</strong>, instead of the box, is noted if there were
+none.&nbsp;This job has 2 events, clicking on the icon brings
+up a panel which contains one or more Tabs, as relevant,
+i.e., Recommendations, Efficiencies, Application Failure.
+See the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a>.</li>
+<li><a href="#id9"><span class="problematic" id="id10">**</span></a>Job icon:&nbsp;<a href="#id11"><span class="problematic" id="id12">**</span></a>notes the job type and status. The box
+is&nbsp;colored code to indicate as the application’s status.</li>
+<li><strong>Job information:</strong> job number, owner, queue, cluster
+and start/stop time.</li>
+<li><strong>KPIs:</strong>&nbsp;these vary by job type.</li>
+</ul>
+<p>The last section, typically divided into two, has specific
+information related to job. Each Application-Specific
+Manager Section goes into detail about this section. If the
+job is composed of tasks/jobs/stages they appear on the the
+left under <strong>Navigation</strong>. Clicking a row brings up detailed
+information about it in a tile/panel below. The Auto
+Action/Event () column notes the number of events associated
+with the job/stage.</p>
+<ul class="simple">
+<li>Common Tabs:<ul>
+<li><strong>Errors:</strong> The Hive, MapReduce and Workflow APMs
+contain this tab. It lists all errors associated with
+the job. Like job status, the errors are color coded
+and number for each type (fatal, errors, warnings) are
+noted for each job. The top line list the number of
+all jobs/task. The errors are grouped by tasks/jobs
+and then by severity. For each job/task the total and
+type of errors are noted. Time, keywords (if any) and
+a brief message is displayed for the error.
+<a class="reference external" href="Some-Keywords-and-Error-Messages_541098674.html">Keywords</a>
+extract important details from the errors messages/log
+data that can help developers/operators quickly root
+cause issue. “No errors found” is displayed when there
+are none.</li>
+</ul>
+</li>
+<li><ul class="first">
+<li><strong>Conf/Configuration</strong>: The MapReduce, Spark and Tez
+APMs contain this tab. It lists the configuration
+parameters for the task/job being displayed and their
+values. The parameters vary according to task/job.</li>
+</ul>
+</li>
+<li><ul class="first">
+<li><strong>Tags</strong>: All APM’s except Pig and Cascading contain
+this tab. It lists the defined tag keys and associated
+values for the application. The example below has two
+tag keys, <em>project</em> and <em>dept</em> with each having one
+value, <em>group11</em> and <em>hr</em> respectively.</li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="theapplicationspage-application-specificmanagers">Application-Specific Managers</p>
+<p class="rubric" id="theapplicationspage-cascadingcascadingandpigapplicationmanagers">Cascading and Pig Application Managers</p>
+<p>The only difference between the two Application Managers is
+the job type name; otherwise they are exactly the same. The
+example used below is the Pig APM.</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Events</strong>: The number, if any, of Unravel insights for
+this query. See the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a> for more
+information.</li>
+<li><strong>Duration</strong>: Total time taken by the query.</li>
+<li><strong>Data I/O</strong>: Total data read and written by the query.</li>
+<li><strong>Number of Yarn Apps</strong>: The number of apps that make up
+the workflow.</li>
+</ul>
+<p>By default the window open up displaying the Navigation and
+Task Attempts.</p>
+<p class="rubric" id="theapplicationspage-tabs">Tabs</p>
+<p>The left Tabs:</p>
+<ul>
+<li><p class="first"><strong>Navigation</strong>: list of all the jobs, their status and
+type.</p>
+</li>
+<li><p class="first"><strong>Gantt chart</strong>: Exceptions, errors, and warnings
+associated with this application. See here for an
+example.</p>
+<div class="expand-container docutils container" id="expander-1077562891">
+<div class="expand-control docutils container" id="expander-control-1077562891">
+<p>Click here for a screenshot.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Tags</strong>: See <a class="reference external" href="#TheApplicationsPage-Tag">here</a> for an
+example.</p>
+</li>
+</ul>
+<p>The right Tabs</p>
+<ul>
+<li><p class="first"><strong>Task Attempts</strong>: Displays Map and Reduce task attempts
+by success, failed, and killed status.The data displayed
+is&nbsp;for the entire HIVE job. To see the details for a
+specific MapReduce task click on the job in the
+Navigation tab. The Pig APM above shows the Task
+Attempts.</p>
+</li>
+<li><p class="first"><strong>Attempts</strong>: Graphs the Map and Reduce task slot usage
+over the duration of&nbsp;the job.</p>
+<div class="expand-container docutils container" id="expander-1497436634">
+<div class="expand-control docutils container" id="expander-control-1497436634">
+<p>Click here screenshots of the Attempts graphs.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1497436634">
+<p>The wall clock time is noted in the upper left hand
+corner. The computer slot usage is noted below the
+graph.</p>
+</div>
+</div>
+</li>
+</ul>
+<p class="rubric" id="theapplicationspage-hiveapmhiveapplicationmanager">Hive Application Manager</p>
+<p>The Hive Application Manager provides a detailed view into
+the behavior of Hive queries. Typical users are Hadoop DBAs
+or application owners (engineers, BI team, analysts). You
+can use this view to:</p>
+<ul class="simple">
+<li>Resolve inefficiencies, bottlenecks and reasons for
+failure within applications.</li>
+</ul>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-1">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Events</strong>: The number, if any, of Unravel insights for
+this query. See the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a> for more
+information.</li>
+<li><strong>Duration</strong>: Total time taken by the application to
+complete execution.</li>
+<li><strong>Data I/O</strong>: Total data read and written by the
+application.</li>
+<li><strong>Number of YARN apps</strong>: The number of YARN apps making
+up the query.</li>
+</ul>
+<p class="rubric" id="theapplicationspage-tabs-1">Tabs</p>
+<p>By default the Hive APM opens displaying the <strong>Navigation</strong>
+and <strong>Query</strong> tabs.</p>
+<p>The left Tabs are:</p>
+<ul>
+<li><p class="first"><strong>Navigation</strong>: List all the MapReduce jobs associate
+with the query. Click on the job name to bring up job in
+the <a class="reference external" href="#TheApplicationsPage-MapReduceAPM">MapReduce Application
+Manager</a> tile.</p>
+</li>
+<li><p class="first"><strong>Execution Graph</strong>: Shows detailed information about the
+MapReduce jobs and their relationship with one
+another.(lightbulb) This view helps identify bottlenecks
+and inefficiencies.</p>
+<div class="expand-container docutils container" id="expander-1565709510">
+<div class="expand-control docutils container" id="expander-control-1565709510">
+<p>Click here for more information and to see a
+screenshot.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1565709510">
+<p>The graph provides a quick and intuitive way to
+understand the MapReduce jobs. Upon opening the tab
+you immediately see the MR jobs (1) in relation to
+each other along some job info: tables used, the
+job length in absolute and relative value to the
+whole.</p>
+<p>Clicking on the job brings up a box with more Table
+KPI’s, forward path(s) for the Map and Reduce
+operations, and input paths (should you want to
+show them). Click on a table name to bring up the
+<a class="reference external" href="The-Reports-Page_539820049.html#TheReportsPage-TableDetail">table
+information</a>.
+To close the box click <strong>Close</strong> (2) or scroll
+within the tab.</p>
+<p>Click on a path point (3) drill deeper. The
+resulting text box notes the operation type (i.e.,
+MapJoin, ReduceSink, etc.), and various key
+information about the operation. The information
+displayed is specific to that operation at that
+time.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Gantt Chart</strong>: Shows job sequencing using a gantt
+chart.</p>
+</li>
+<li><p class="first"><strong>Errors</strong>: Exceptions, errors, and warnings associated
+with this application. See
+<a class="reference external" href="#TheApplicationsPage-Error">here</a> for an example.</p>
+</li>
+<li><p class="first"><strong>Tags</strong>: Lists defined tag keys and associated values.
+See <a class="reference external" href="#TheApplicationsPage-Tag">here</a> for an example.</p>
+</li>
+</ul>
+<p>The right Tabs are:</p>
+<ul>
+<li><p class="first"><strong>Query</strong>: Shows the Hive Query. See the Hive
+Application
+Manager<a class="reference external" href="#TheApplicationsPage-HiveAPM">window</a>above
+for an&nbsp;example Query tab. Click on the <strong>Copy Query</strong> to
+copy it to the clipboard.</p>
+</li>
+<li><p class="first"><strong>Tables:</strong>&nbsp;A list tables accessed by Application.</p>
+<div class="expand-container docutils container" id="expander-1791011492">
+<div class="expand-control docutils container" id="expander-control-1791011492">
+<p>Click here to for more information and to see a
+screenshot.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1791011492">
+<p>Click on&nbsp;the table name to bring up the Table
+Detail. See
+<a class="reference external" href="The-Reports-Page_539820049.html#TheReportsPage-TableDetail">here</a>
+for more information on this view.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Task Attempts</strong>: Displays MapReduce task attempts by
+success, failed, and killed status.The data displayed
+is&nbsp;for the entire HIVE job. To see the details for a
+specific MapReduce task click on the job in the
+Navigation tab.</p>
+<div class="expand-container docutils container" id="expander-448330083">
+<div class="expand-control docutils container" id="expander-control-448330083">
+<p>Click here to for more information and to see a
+screenshot.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Attempts</strong>: Graphs the Map and Reduce task slot usage
+over the duration of&nbsp;the job.</p>
+<div class="expand-container docutils container" id="expander-1125975696">
+<div class="expand-control docutils container" id="expander-control-1125975696">
+<p>Click here to for more information and to see a
+screenshot.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1125975696">
+<p>The wall clock time the job started is listed in
+the upper left hand corner. The total Map and
+Reduce slot duration time is noted below the graph.</p>
+</div>
+</div>
+</li>
+</ul>
+<p class="rubric" id="theapplicationspage-impalaapmimpalaapplicationmanager">Impala Application Manager</p>
+<p>The Impala Application Manager provides a detailed view into
+the behavior of Impala queries.</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-2">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Events</strong>: The number, if any, of Unravel insights for
+this query. See the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a> for more
+information.</li>
+<li><strong>Duration</strong>: Total time taken by the query.</li>
+<li><strong>Data I/O</strong>: Total data read and written by the query.</li>
+<li><strong>Number of Fragments</strong>: Total number of query fragments.</li>
+<li><strong>Number of Operators</strong>: Total number of operators in
+this query.</li>
+</ul>
+<p class="rubric" id="theapplicationspage-tabs-2">Tabs</p>
+<p>The left Tabs are:</p>
+<ul class="simple">
+<li><strong>Fragments</strong>: Displays a table with information about
+each fragment associated with this query. Click on
+<strong>More</strong> to expose the Fragments operators and <strong>Less</strong>
+to hide them. The coordinator fragment () is always the
+nth fragment.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="expand-container docutils container" id="expander-556940837">
+<div class="expand-control docutils container" id="expander-control-556940837">
+Click here for a more information on the Fragment tile
+and screenshots.</div>
+<div class="expand-content docutils container" id="expander-content-556940837">
+<p>This window shows the Fragment and it’s KPIs. It
+defaults to the table of the Fragment’s Operators with
+the associated KPIs for the operations. Clicking on
+the operator brings up the operator window. (See
+<a class="reference external" href="#TheApplicationsPage-ImpalaOperators">Operators</a></p>
+<p>&nbsp;below for more information.) You can view the <a class="reference external" href="#TheApplicationsPage-ImpalaQueryPlan">Query
+Plan</a> or the
+Instance View.</p>
+<p><strong>Instance View:</strong> lists each instances with it’s
+KPI’s.</p>
+</div>
+</div>
+<ul>
+<li><p class="first"><strong>Operators</strong>: Displays a list of all operators for all
+fragments.</p>
+<div class="expand-container docutils container" id="expander-827764278">
+<div class="expand-control docutils container" id="expander-control-827764278">
+<p>Click here to screenshots.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-827764278">
+<p>You can search the operators name. Click on the
+operator to display its details.</p>
+<p><strong>Scan HDFS details</strong></p>
+<p><strong>Aggregate Details</strong></p>
+<p><strong>Exchange Details</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Gannt Chart</strong>: Charts the fragments and the time spent
+on each operation.</p>
+<div class="expand-container docutils container" id="expander-1648753730">
+<div class="expand-control docutils container" id="expander-control-1648753730">
+<p>Click to see a screenshot.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1648753730">
+<p>Hover over a section see the operation and it’s
+KPI’s.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Query Plan</strong>: Shows the query plan in fragment or
+operator view.</p>
+<div class="expand-container docutils container" id="expander-1008813512">
+<div class="expand-control docutils container" id="expander-control-1008813512">
+<p>Click here to see screenshots.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1008813512">
+<p>Both the fragment and operator view are shown
+below. Hover over the operator to get detailed
+information. Click on the button to switch views.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Tags</strong>: Lists defined tag keys and associated values.
+See <a class="reference external" href="#TheApplicationsPage-Tag">here</a> for an example.</p>
+</li>
+</ul>
+<p>The right Tabs are:</p>
+<ul>
+<li><p class="first"><strong>Query</strong>: Shows the query plan code. Click on <strong>Query
+Copy</strong> to copy the query. See Impala APM
+<a class="reference external" href="#TheApplicationsPage-ImpalaAPM">window</a> above for the
+Query Tab.</p>
+</li>
+<li><p class="first"><strong>Mem Usage</strong>: Graphs the Memory Usage by peak usage.
+Notes the maximum memory used on what host and the
+estimated memory per host.</p>
+<div class="expand-container docutils container" id="expander-129016180">
+<div class="expand-control docutils container" id="expander-control-129016180">
+<p>Click here to see a screenshot.</p>
+</div>
+</div>
+</li>
+</ul>
+<p class="rubric" id="theapplicationspage-kafkaapmkafkaapplicationmanager">Kafka Application Manager</p>
+<p>The Kafka Application Manager provides Multi-Cluster support
+for monitoring<a href="#id13"><span class="problematic" id="id14">**</span></a>:
+**</p>
+<ul class="simple">
+<li>Multi Cluster Metrics Monitoring, and</li>
+<li>Multi Cluster Consumer Offset/Lag Monitoring.</li>
+</ul>
+<p>See<a class="reference external" href="Kafka-Insights_541393672.html">Kafka Insights</a>for
+a Use Case example of locatingof<a class="reference external" href="#TheApplicationsPage-KInsights">lagging or
+stalled</a>&nbsp;Consumer
+Groups</p>
+<p><strong>Operations</strong> | <strong>Charts</strong> | <strong>Kafka</strong>&nbsp;displays the list
+of <strong>Configured Kafka Clusters</strong>.</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-3">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Bytes in/sec</strong></li>
+<li><strong>Bytes out/sec</strong></li>
+<li><strong>Messages in/sec</strong></li>
+<li><strong>Total Fetch Requests per /sec</strong></li>
+<li><strong>Number of Active Controller</strong></li>
+<li><strong>Number of Under Replicated Partitions&nbsp;Number of Offline
+Partitions</strong></li>
+</ul>
+<p>Click on the Cluster Name to bring up the <strong>Cluster View</strong>.</p>
+<p class="rubric" id="theapplicationspage-clusterview">Cluster View</p>
+<p>This view has three sections:</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-4">Key Performance Indicators</p>
+<p class="rubric" id="theapplicationspage-metricgraphs">Metric Graphs</p>
+<ul class="simple">
+<li>kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions</li>
+<li>kafka.controller:type=KafkaController,name=ActiveControllerCount</li>
+<li>kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent</li>
+<li>kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec</li>
+<li>kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec</li>
+<li>kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec</li>
+<li>kafka.server:type=ReplicaManager,name=PartitionCount</li>
+<li>kafka.server:type=ReplicaManager,name=LeaderCount</li>
+<li>kafka.controller:type=KafkaController,name=OfflinePartitionsCount</li>
+<li>kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Fetch</li>
+<li>kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce</li>
+<li>kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Fetch</li>
+<li>kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce</li>
+<li>kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs</li>
+<li>kafka.server:type=DelayedOperationPurgatory,name=PurgatorySize,delayedOperation=Produce</li>
+<li>kafka.server:type=DelayedOperationPurgatory,name=PurgatorySize,delayedOperation=Fe</li>
+</ul>
+<p class="rubric" id="theapplicationspage-kafkatopicslistconsumedbyaconsumergroup-cg-withrelevantkpis">Kafka Topics List consumed by a Consumer Group
+(CG) with relevant KPIs.</p>
+<p>Organized by Topic, you can search on the topic name; any
+topic matching or containing the search sting will be
+displayed. Click on the Topic or Brokers name to see the
+Kafka Topic view. In the list below test2 has two (2)
+consumer groups associated with it, demo and
+test-consumer-group. Click on the Consumer Group name to
+bring it up in the Consumer Group View.</p>
+<p class="rubric" id="theapplicationspage-consumergroupview">Consumer Group View</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-5">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Number of Topics</strong></li>
+<li><strong>Number of Partitions</strong></li>
+</ul>
+<p>The Topic lists displays the KPIs; when details are
+available a <strong>more info</strong> glyph is displayed. Click on it to
+bring up the Kafka view for the topic. Below the list are
+two tabs which display graphs of the Topic and Partition
+details. By default the window opens with the Topic Detail
+graph displayed.</p>
+<div class="expand-container docutils container" id="expander-1766946297">
+<div class="expand-control docutils container" id="expander-control-1766946297">
+Click here to see a screenshot of the Partition Tab.</div>
+<div class="expand-content docutils container" id="expander-content-1766946297">
+You can chose both the <strong>Partition</strong> and the
+<strong>Metric</strong> for the display. By default the
+0<sup>th</sup> partition is displayed using the metric
+<strong>offset</strong>. A <strong>Partition</strong> <strong>Details’</strong> list is
+populated if the details are available.</div>
+</div>
+<div class="expand-container docutils container" id="expander-1766705199">
+<div class="expand-control docutils container" id="expander-control-1766705199">
+Click here to see a screenshot Kafka Topic view.</div>
+<div class="expand-content docutils container" id="expander-content-1766705199">
+<p>The Kafka View has two tabs, <strong>Topic Detail</strong> and
+<strong>Partition</strong> <strong>Detail</strong>. Each view has a <strong>Consumer
+Details’</strong> list which is populated if the details are
+available.</p>
+<p><strong>Kafka Topic Detail</strong></p>
+<p>By default the <strong>Kafka Topic Detai</strong>l opens in the
+<strong>Topic Detail</strong> view which graphs the KPIs.</p>
+<p><strong>Kafka Partition Detail</strong></p>
+<p>You can chose both the <strong>Partition</strong> and the
+<strong>Metric</strong> for the display. By default the
+0<sup>th</sup> partition will be displayed on using the
+metric <strong>offset</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<p class="rubric" id="theapplicationspage-kinsightsunravelinsightsforkafka">Unravel Insights for Kafka</p>
+<p>Auto-detection of Lagging/Stalled Consumer Groups</p>
+<p>Unravel determines Consumer status by evaluating the
+consumer’s behavior over a sliding window. For example, we
+use average lag trend for 10 intervals (of 5 minutes
+duration each), covering a 50 minute period. Consumer Status
+is evaluated on several factors during the window for each
+partition it is consuming.</p>
+<div class="docutils container">
+<p>For a topic partition Consumer status is</p>
+<ul class="simple">
+<li>Stalled if:<ul>
+<li>Consumer commit offset for the topic partition is
+not increasing and lag is greater than zero.</li>
+</ul>
+</li>
+<li>Lagging if:<ul>
+<li>Consumer lag for the topic partition is increasing
+consistently, and,</li>
+<li>An increase in lag from the start of the window to
+the last value is greater than lag threshold (e.g.,
+250).</li>
+</ul>
+</li>
+</ul>
+<p>The information is distilled down into a status for each
+partition, and then into a single status for the
+consumer. A consumer is either in one of the following
+states:</p>
+<ul class="simple">
+<li>OK,</li>
+<li>Warning: the consumer is working, but falling behind,
+or</li>
+<li>Error: the consumer has stopped or stalled.</li>
+</ul>
+</div>
+<p class="rubric" id="theapplicationspage-mapreduceapmmapreduceapplicationmanager">MapReduce Application Manager</p>
+<p>The MapReduce Application Manager provides and&nbsp;easy way to
+understand the breakdown of the application.&nbsp;You can use
+this view to:</p>
+<ul class="simple">
+<li>Drill down into MapReduce jobs that make up the
+application, and</li>
+<li>Resolve&nbsp;inefficiencies, bottlenecks and reasons for
+failure within applications.</li>
+</ul>
+<p>It contains similar sections to the Hive Application Manager
+and additionally shows the timeline view of MapReduce job
+execution, logs and configuration.</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-6">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Events</strong>: The number, if any, of Unravel insights for
+this query. See the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a> for more
+information.</li>
+<li><strong>Duration</strong>: Total time taken by the application to
+complete execution.</li>
+<li><strong>Data I/O</strong>: Total data read and written by the
+application.</li>
+</ul>
+<p class="rubric" id="theapplicationspage-tabs-3">Tabs</p>
+<p>By default the MapReduce APM opens in the <strong>Graphs |
+Attempts</strong> view.</p>
+<ul>
+<li><p class="first"><strong>Graphs</strong>: Has four (4) sub tabs.</p>
+<ul class="simple">
+<li><strong>Attempts</strong>: Number of task attempts are charted in
+“wall-clock” time. The aggregated time of all tasks
+running in on the Map/Reduce slot duration is noted
+below the graph.</li>
+<li><strong>Containers, Vcores,</strong> and**&nbsp;Memory**: Graphs
+utilization of slot containers, vcores, and memory
+over time.</li>
+</ul>
+</li>
+<li><p class="first"><strong>Timeline</strong>: Displays the details of each MapReduce job
+by showing the execution of each task on the machine it
+was executed on.</p>
+<div class="expand-container docutils container" id="expander-479169206">
+<div class="expand-control docutils container" id="expander-control-479169206">
+<p>Click here for more details and to see a
+screenshot.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-479169206">
+<p>The Timeline tab is divided into two sections:</p>
+<ul class="simple">
+<li>a <strong>Distribution</strong> chart (which displays either
+the <strong>Map</strong> or <strong>Reduce</strong> tasks)</li>
+<li>a bottom table which lists either the tasks by
+stages on servers or teh list of tasks and their
+associated KPIs’</li>
+</ul>
+<p>The default displays the Map jobs and the timeline.
+You can change the Distribution Charts by selecting
+<strong>Map</strong> or <strong>Reduce</strong> (1). Whether to display the
+<strong>Timeline</strong> or <strong>Selected</strong> tasks (3). When
+displaying the timeline you can filter the display
+by Map, Reduce, Killed/Failed or All jobs (2). You
+can chose what timeline/tasks to display by
+dragging and highlighting a section of the
+distribution chart.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Metrics</strong>: The metrics, their definitions and values.</p>
+<div class="expand-container docutils container" id="expander-1767418822">
+<div class="expand-control docutils container" id="expander-control-1767418822">
+<p>Click here to see the screenshot.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Logs:</strong> Lists the available logs by Map, Reduce and
+Application Master.</p>
+<div class="expand-container docutils container" id="expander-1578670599">
+<div class="expand-control docutils container" id="expander-control-1578670599">
+<p>Click here for more details and to see a
+screenshot.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1578670599">
+<p>Click on the tab to see the listing for that type
+(Map, Reduce, or Application Master). Click on an
+item to see the log.</p>
+<div class="expand-container docutils container" id="expander-1527717004">
+<div class="expand-control docutils container" id="expander-control-1527717004">
+<p>Click here for an example log.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Configuration:</strong> The defined parameters and their
+values.</p>
+<div class="expand-container docutils container" id="expander-343880988">
+<div class="expand-control docutils container" id="expander-control-343880988">
+<p>Click here to see a screenshot</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Resource Usage</strong>: (lightbulb) These graphs are useful
+for identifying critical resources that caused a
+performance degradation.</p>
+<div class="expand-container docutils container" id="expander-8857123">
+<div class="expand-control docutils container" id="expander-control-8857123">
+<p>Click here to see a screenshot</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-8857123">
+<p>Initially all the executors are displayed using the
+<strong>Metric</strong> systemCpuLoad. You can chose a different
+metric to display from the <strong>Metric</strong> pull down
+men. Hover over an executor to bring up the
+O<strong>nly</strong> option and click on it to display just
+the information for that executor. To graph all
+executors, hover above the list for the <strong>Show
+All</strong> option and click on it to display all.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Errors</strong>: Exceptions, errors, and warnings associated
+with this application. See
+<a class="reference external" href="#TheApplicationsPage-Error">here</a> for an example.</p>
+</li>
+<li><p class="first"><strong>Tags</strong>: Lists defined tag keys and associated values.
+See <a class="reference external" href="#TheApplicationsPage-Tag">here</a> for an example.</p>
+</li>
+</ul>
+<p class="rubric" id="theapplicationspage-sparkapplicationmanager">Spark Application Manager</p>
+<p>See <a class="reference external" href="Spark-Application-Manager_548274278.html">Spark Application Manager
+page</a>.</p>
+<p class="rubric" id="theapplicationspage-tezapmtezapplicationmanager">Tez Application Manager</p>
+<p>The Tez Application Manager provides a detailed view into
+the behavior of Hive queries as a DAG (Directed Acyclic
+Graph).</p>
+<p><img alt="(lightbulb)" class="emoticon emoticon-light-on" src="images/icons/emoticons/lightbulb_on.png" /> To troubleshoot Tez data collection issues,
+check <code class="docutils literal notranslate"><span class="pre">/usr/local/unravel/logs/unravel_ew_1.log</span></code>.</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-7">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Events</strong>: The number, if any, of Unravel insights for
+this query. See the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a> for more
+information.</li>
+<li><strong>Duration</strong>: Total time taken by the query.</li>
+<li><strong>Data I/O</strong>: Total data read and written by the query.</li>
+</ul>
+<p class="rubric" id="theapplicationspage-tabs-4">Tabs</p>
+<p>By default the Tez APM opens showing the Navigation and
+Program Tabs.</p>
+<p>The left Tabs are:</p>
+<ul>
+<li><p class="first"><strong>Navigation</strong>: List the Dag jobs with KPIs, Duration and
+I/O.</p>
+<div class="expand-container docutils container" id="expander-1139506883">
+<div class="expand-control docutils container" id="expander-control-1139506883">
+<p>Click here for more information and screenshots of
+the Dag detail.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1139506883">
+<p>The DAG detail has six tabs:</p>
+<ul class="simple">
+<li><strong>Query:</strong> Displays the query.</li>
+<li><strong>Graph:</strong> Displays the vertices and their
+relationship to each other. Clicking on a node
+brings up the task details.**
+**</li>
+<li><strong>Counter</strong>: Lists all the relevant counters
+for the Tez-DAG and their values.</li>
+<li><strong>Vertex</strong> <strong>Timeline</strong>: Displays the timeline
+for all tasks. The task time can be displayed in
+both <strong>Wall Clock</strong> time and <strong>Total Run</strong> time
+as applicable. Hover over the task to display
+the information in text.</li>
+<li><strong>All</strong> <strong>Vertices</strong>: List each vertex and
+their KPIs. The Vertices are searchable by
+Vertex Name; vertices containing the string will
+be displayed.</li>
+<li><strong>All Task</strong>: List all tasks, their status
+(failed, success, etc.), vertex name and other
+relevant information. The tasks are searchable
+by Task Id and Vertex name; Tasks containing the
+string will be displayed.</li>
+<li><strong>All Task Attempts</strong>: List all attempts,
+their status (failed, success, etc.), vertex
+name and other relevant information. The task
+attempts are searchable by Attempt Id, Task Id
+and Vertex name; Task attempts containing the
+string will be displayed.</li>
+<li><strong>Changed Configuration</strong>: Lists all relevant
+parameters and their value.</li>
+</ul>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Configuration</strong>: List the configuration parameters and
+their values.</p>
+</li>
+<li><p class="first"><strong>Tags</strong>: Lists defined tag keys and associated values.
+See <a class="reference external" href="#TheApplicationsPage-Tag">here</a> for an example</p>
+</li>
+</ul>
+<p>The right Tabs are:</p>
+<ul>
+<li><p class="first"><strong>Program</strong>: Displays the query.</p>
+</li>
+<li><p class="first"><strong>Graphs</strong>: Has three (3) sub tabs.</p>
+<ul class="simple">
+<li><strong>Containers, Vcores,</strong> and**&nbsp;Memory**: Graphs
+utilization of slot containers, Vcores, and memory
+over time.</li>
+</ul>
+</li>
+<li><p class="first"><strong>Resources</strong>: Graphs the resources consumed.</p>
+<div class="expand-container docutils container" id="expander-1129839679">
+<div class="expand-control docutils container" id="expander-control-1129839679">
+<p>Click here for more information and to see a
+screenshot.</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-1129839679">
+<p>By default the <strong>Resource</strong> tab display the first
+ten (10) series using the <strong>systemCpuLoad</strong> metric.
+You can select one or more series to display in the
+<strong>Select</strong> Box. You can change the default number
+of series to show (1-n). Clicking on a <strong>series</strong>
+name causes the graph to display that series alone.
+You chose the <strong>Metric</strong> to graph from the pull
+down menu. Click <strong>Get Data</strong> to retrieve the data
+for that metric, it can be viewed in its Raw form,
+JSON, or headers.</p>
+</div>
+</div>
+</li>
+</ul>
+<p class="rubric" id="theapplicationspage-workflowapmworkflowmanager">Workflow Manager</p>
+<p>The Workflow Manager provides a comprehensive view to
+understand workflows and their patterns of execution. It is
+used by Workflow (Pipelines) owners</p>
+<ul class="simple">
+<li>to identify anomalies, inefficiencies and bottlenecks in
+workflow instances.</li>
+</ul>
+<p>&nbsp;The Workflow Manager helps pipeline owners easily maintain
+SLAs. (Applications that have a Workflow parent will have a
+link to the workflow in the Goto column in Applications |
+Applications.)</p>
+<p class="rubric" id="theapplicationspage-keyperformanceindicators-8">Key Performance Indicators</p>
+<ul class="simple">
+<li><strong>Events</strong>: The number, if any, of Unravel insights for
+this query. See the <a class="reference external" href="#TheApplicationsPage-EventPanel">Event Panel
+Examples</a> for more
+information.</li>
+<li><strong>Duration</strong>: Total time taken by the query</li>
+<li><strong>Data I/O</strong>: Total data read and written by the query.</li>
+<li><strong>Number of Yarn Apps</strong>: The number of apps that make up
+the workflow</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="theapplicationspage-tabs-5">Tabs</p>
+<p>The APM opens showing the <strong>Navigation</strong> and <strong>Compare</strong>
+tabs by default.</p>
+<p>The left Tabs</p>
+<ul>
+<li><p class="first"><strong>Navigation</strong>: Provides an easy way to understand the
+breakdown of the workflow the applications which comprise
+the Workflow, i.e., Hive, Spark, MapReduce, Oozie. Click
+on <strong>More</strong> to display the jobs/apps which comprise the
+type.</p>
+<div class="expand-container docutils container" id="expander-2097034825">
+<div class="expand-control docutils container" id="expander-control-2097034825">
+<p>Click here for more information and a screenshot</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-2097034825">
+<p>Below the second Oozienode is shown, it is
+comprised of one MapReduce job and three Hive jobs.
+The hive jobs comprise one or more tasks, so that
+too can be expanded. In the example below, the
+second Oozienode has been expanded along with the
+first hive job within it. You can click on any job
+to see the application manager for it. In the
+example, below you can click on the expanded hive
+job to bring up the hive application manager.
+Similarly you can click on the mapreduce job within
+the hive job to go directly to it. Click on
+<strong>Less</strong> to close the list.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Execution</strong>: Displays the execution graph of the
+workflow.</p>
+<div class="expand-container docutils container" id="expander-287726243">
+<div class="expand-control docutils container" id="expander-control-287726243">
+<p>Click here for more information and a screenshot</p>
+</div>
+<div class="expand-content docutils container" id="expander-content-287726243">
+<p>Click to zoom in, and to zoom in. Click to return
+to the initial display. Hover over a node within
+the graph to see a text box which information about
+the node task.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Errors</strong>: Exceptions, errors, and warnings associated
+with this application. See
+<a class="reference external" href="#TheApplicationsPage-Error">here</a> for an example.</p>
+</li>
+<li><p class="first"><strong>Tags</strong>: See <a class="reference external" href="#TheApplicationsPage-Tag">here</a> for an
+example.</p>
+</li>
+</ul>
+<p>The right Tabs:</p>
+<ul>
+<li><p class="first"><strong>Compare</strong>: Provides a quick way to understand how well
+a workflow run compares to its other runs. Hovering your
+pointer graph displays instances top KPIs such as
+<strong>duration</strong>, <strong>data I/O,</strong> <strong>resources</strong>, and <strong>the
+number of jobs</strong> in that instance. Clicking on the point
+in the chart brings up the Workflow APM for that
+instance. The graph <strong>Metrics</strong> choices are <strong>I/O</strong>, <strong>MR
+Jobs</strong>, <strong>Resource</strong> and <strong>Events</strong>. The Workflow APM
+<a class="reference external" href="#TheApplicationsPage-WorkflowManager">above</a> show an
+example of the compare tab.</p>
+</li>
+<li><p class="first"><strong>Task Attempts</strong>: Displays charts for Map Task, Reduce,
+and Spark Tasks, broken down by success, failed, and
+killed as appropriate.</p>
+<div class="expand-container docutils container" id="expander-1276881755">
+<div class="expand-control docutils container" id="expander-control-1276881755">
+<p>Click to see a screenshot.</p>
+</div>
+</div>
+</li>
+<li><p class="first"><strong>Attempts</strong>: Graphs the attempts over the time interval
+in Wall Clock time and list the Map and Reduce Slot
+Duration in total computing time below.</p>
+<div class="expand-container docutils container" id="expander-1904889982">
+<div class="expand-control docutils container" id="expander-control-1904889982">
+<p>Click to see a screenshot.</p>
+</div>
+</div>
+</li>
+</ul>
+<p class="rubric" id="theapplicationspage-eventpaneleventpanelexamples">Event Panel Examples</p>
+<p>The Unravel intelligence engine helps you manage your
+applications&nbsp;more efficiently by providing insights into
+their run. The UI engine gives its insights and tuning
+suggesting via the Events Panel. Not all UI engine insights
+results in concrete recommendations, so to take full
+advantage you must read the efficiency panel. There is not a
+1-1 correspondence between the event and recommendation
+number. A single event might lead to no or many
+recommendations.</p>
+<p class="rubric" id="theapplicationspage-recommendations">Recommendations</p>
+<p>Lists the parameters to change, shows their current and
+recommended value.</p>
+<p class="rubric" id="theapplicationspage-efficiency">Efficiency</p>
+<p>The efficiency list details the inefficiencies. The UI
+engine then</p>
+<ul class="simple">
+<li>might make&nbsp;a recommendation and may note the expected
+result from such a change,</li>
+<li>make a suggestion, or</li>
+<li>note where to look to increase efficiency</li>
+</ul>
+<p>Below are two examples. Each type of job and instance of a
+job has events relevant to that particular job and instance.</p>
+<p class="rubric" id="theapplicationspage-mapreducejobexample">MapReduce Job Example</p>
+<p>This MapReduce job is part of a Hive Query. In this example
+the UI engine lists list four (4) events and has three (3)
+recommendations.</p>
+<p><strong>Recommendations</strong></p>
+<p><strong>Efficiency 1: Used Too Many Reducers</strong></p>
+<p>Resulted in the one recommendation (#1).**
+**</p>
+<p><strong>Efficiency 2: Reduce Tasks that Start before Map Phase
+Finishes</strong></p>
+<p>Resulted in one suggestion<a href="#id15"><span class="problematic" id="id16">**</span></a>.
+**</p>
+<p><strong>Efficiency 3: Too Many Mappers</strong></p>
+<p>Resulted in the two recommendations (#2 and #3).</p>
+<p><strong>Efficiency 4: Large Data Shuffle from Map to Reduce</strong></p>
+<p>Resulted in a suggestion.</p>
+<p class="rubric" id="theapplicationspage-tezdagexample">Tez DAG Example</p>
+<p>This Tez DAG job is part of a Hive Query. In this example
+the UI engine lists list three (3) events and has four (4)
+recommendations.</p>
+<p><strong>Recommendations</strong></p>
+<p><a href="#id17"><span class="problematic" id="id18">**</span></a>Efficiency 1: Tez DAG Map Vertex used too many tasks
+**</p>
+<p>Resulted in two suggestions (#3 and #4) and explanation of
+the problem.**
+**</p>
+<p><a href="#id19"><span class="problematic" id="id20">**</span></a>Efficiency 2: Tez DAG Reducer Vertex used too many tasks
+**</p>
+<p>Resulted in one recommendation (#1).**
+**</p>
+<p><a href="#id21"><span class="problematic" id="id22">**</span></a>Efficiency 3: hive.exec.parallel is set to false
+**</p>
+<p>Resulted in one recommendation (#2).**
+**</p>
+<p class="rubric" id="theapplicationspage-appendices">Appendices</p>
+<p class="rubric" id="theapplicationspage-eventlistevent-list-541295315-html"><a class="reference external" href="Event-List_541295315.html">Event List</a></p>
+<p>A list of all events&nbsp;generated by Unravel.</p>
+<p class="rubric" id="theapplicationspage-resourcemetricsresource-metrics-541164163-html"><a class="reference external" href="Resource-Metrics_541164163.html">Resource
+Metrics</a></p>
+<p>A&nbsp;list of resource metrics collected by Unravel.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="pagesection group docutils container">
+<div class="pagesectionheader docutils container">
+<p class="pagesectiontitle rubric" id="attachments">Attachments:</p>
+</div>
+<div class="greybox docutils container">
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image1" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033213.png">zoomOut.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image2" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541131494.png">AACol.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image3" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541393603.png">20180419_172.36.1.124-PigGantt.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image4" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541131498.png">Kafa-Cluster-WithConsumers-TopicListOnly.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image5" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541197125.png">Tez-Dag-Eff3.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image6" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164210.png">Tez-APM-0274-DagDetail-ChangedConfiguration.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image7" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033217.png">coord.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image8" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033221.png">returnToIntial.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image9" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033225.png">MapReduce-4Rec4Eff-Eff3.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image10" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541393607.png">Tez-Dag-Eff1.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image11" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164214.png">MapReduce-4Rec4Eff-Eff1.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image12" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541131502.png">Tez-Dag-Rec.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image13" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033229.png">Kafka-Cluster-WithConsumer-KPIsOnly.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image14" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541295364.png">Kafa-Cluster-WithConsumer-MetricGraphsOnly.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image15" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229676.png">Impala-Gannt-ShowingSectionInfo.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image16" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164218.png">20180430__172.36.1.124-TaskAttempts.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image17" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328147.png">HIVE-APM-Tables.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image18" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033233.png">Impala-Operator-Exchange.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image19" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164222.png">APM-TitleBarWParent.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image20" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541393611.png">MapReduce-4Rec4Eff-Rec.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image21" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098708.png">HIVE-APM-Attempts.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image22" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229680.png">Tez-Dag-Eff2.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image23" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229684.png">Impala-APM.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image24" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541131506.png">20180419_172.36.1.124-Pig-TaskAttempts.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image25" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541197129.png">MR-APM-KPI-Section.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image26" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541360963.png">4.3-ApplicationsHeader.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image27" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098712.png">RecBar-Orange.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image28" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541360967.png">Tez-APM-0274-DagDetail-Tasks.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image29" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541295368.png">Kafka-ConsumerGroupTopicDetail.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image30" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541197133.png">MapReduce-4Rec4Eff-Eff2.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image31" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541164197/541295376.png">20180430
+-172.36.124-WrkFlw-ExecHover.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image32" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541295372.png">20180430_172.36.1.110-Tez-APM.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image33" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229688.png">Impala-Operators-60px.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image34" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541131510.png">Hive-Table.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image35" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541197137.png">Kafka-Topic-Partition.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image36" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164226.png">Tez-APM-0274.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image37" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098716.png">Workflow-APM.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image38" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098720.png">Impala-FragMorewCoord.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image39" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229692.png">Tez-APM-0274-Resources.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image40" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229696.png">HIVE-APM-TaskAttempts.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image41" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328151.png">20180420_MR-APM-Conf.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image42" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541360971.png">worddavd67ed59e8d570da74c920301be70bb81.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image43" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164230.png">Tags-FromSpark.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image44" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328155.png">Tez-APM-0274-DagDetail-Graph-DetailBox.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image45" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098724.png">Tez-APM-0274-DagDetail-AllVertices.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image46" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098728.png">Kafka-Topic-Topic.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image47" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164234.png">Impala-FragmentOpen-2.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image48" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541360975.png">20180420_MR-APM-Resource-ShowOnly.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image49" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164238.png">zoomIn.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image50" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229700.png">20180420_MR-APM-Timeline-MapTimeline.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image51" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229704.png">Impala-InstanceView.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image52" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328159.png">Impala-Operator-ScanHDFS.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image53" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541295380.png">20180430__172.36.1.124-WrkFlw-AddedSelected.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image54" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541360979.png">MapReduce-4Rec4Eff-Eff4-ex.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image55" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033237.png">20180419_172.36.1.124-PigAPM.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image56" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033241.png">20180430__172.36.1.124-Attempts.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image57" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098732.png">Tez-APM-0274-DagDetail-AllTaskAttempts.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image58" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164242.png">HIVE-MR-APMs.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image59" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328163.png">20180716_172.36.1.124-WorkflowTab.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image60" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541033245.png">20180420_Hive-APM-TypLayoutExample.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image61" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541197141.png">Errors-fromMR.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image62" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328167.png">20180420_MR-APM-Metrics.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image63" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328171.png">20180420_MR-APM.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image64" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541229708.png">20180420_Impala-MemoryUsagepng.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image65" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541164197/541033249.png">20180430
+-172.36.124-WrkFlw-NavExpanded.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image66" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098736.png">20180420_MR-APM-Logs.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image67" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541164246.png">Tez-APM-0274-DagDetail-VertexTimeline-WallwRunTime.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image68" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541393615.png">Impala-QueryPlan-60px.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image69" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541360983.png">20180420_MR-APM-TaskLogDis.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image70" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541393619.png">Hive-APM-Exec-Popup-2-60.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image71" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541131514.png">4.3-ApplicationsExcerpt.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image72" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541328175.png">2018-04-30_120947_172.36.1.124-WorkFLowAPM.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image73" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541393625.png">Impala-Operator-Aggregate.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image74" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541393629.png">4.3.1-Applications.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image75" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/541098741.png">Kafak-ConsumerGroup-ParitionDetail.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image76" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/550142134.png">4.4-AppTitle.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image77" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/575472082.png">4.4-App-SessTab.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image78" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/575537598.png">4.4-CreateSession.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image79" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/575406649.png">4.4-Apps-AppsTab.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image80" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/575734394.png">4.4-124-App-WrkflwTab.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image81" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/575636050.png">GrabAppId.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image82" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/548208725.png">4.4-SessionCreate.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image83" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/575505211.png">Trash.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image84" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/575603669.png">4.4-CreateSess-SpkTab.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image85" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/548405375.png">4.4-SessionAuto.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image86" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/576553703.png">4.4NewSession.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image87" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541164197/597655568.png">Hive-EventPanel-Recs.png</a>
+(image/png)</div>
+</div>
+</div>
+</div>
+<div class="docutils container" id="footer">
+<div class="section footer-body docutils container">
+<p>Document generated by Confluence on Nov 02, 2018 15:16</p>
+<div class="docutils container" id="footer-logo">
+<a class="reference external" href="http://www.atlassian.com/">Atlassian</a></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">UN45</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#id1">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="userguide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="userguide-gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide-common-ui-features.html">Common UI Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide-the-operations-page.html">The Operations Page</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Applications Page</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html#id1">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html#id1">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="userguide.html">User Guide</a><ul>
+      <li>Previous: <a href="userguide-the-operations-page.html" title="previous chapter">The Operations Page</a></li>
+      <li>Next: <a href="advanced-topics.html" title="next chapter">Advanced Topics</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Unravel Data. All rights reserved.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/userguide-the-applications-page.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

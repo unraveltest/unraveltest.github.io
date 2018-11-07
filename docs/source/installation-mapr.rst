@@ -1,5 +1,15 @@
 :title: MapR
 
+MapR
+====
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   installation-mapr-step1
+   installation-mapr-step2
+   
 .. container::
    :name: page
 

@@ -1,3 +1,17 @@
+:title: Amazon Elastic MapReduce (Amazon EMR)
+
+Amazon Elastic MapReduce (Amazon EMR)
+=====================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   installation-amazonemr-step1
+   installation-amazonemr-step2
+   installation-amazonemr-step3
+   installation-amazonemr-step4
+   
 .. container::
    :name: page
 

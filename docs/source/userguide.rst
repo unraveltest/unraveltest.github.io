@@ -1,8 +1,12 @@
 :title: User Guide
 
+User Guide
+===========
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
    userguide-gettingstarted
    userguide-common-ui-features
    userguide-the-operations-page

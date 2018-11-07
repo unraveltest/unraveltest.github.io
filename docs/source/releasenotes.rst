@@ -2,6 +2,7 @@
 
 Release Notes
 =============
+
 .. container::
    :name: page
 

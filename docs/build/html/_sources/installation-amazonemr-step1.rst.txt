@@ -1,3 +1,8 @@
+:title: Step 1: Install Unravel EC2 node for Amazon EMR
+
+Step 1: Install Unravel EC2 node for Amazon EMR
+================================================
+
 .. container::
    :name: page
 

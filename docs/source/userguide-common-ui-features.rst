@@ -1,5 +1,8 @@
 :title: Common UI Features
 
+Common UI Features
+===================
+
 .. container::
    :name: page
 

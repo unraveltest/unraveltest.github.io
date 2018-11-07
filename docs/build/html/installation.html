@@ -16,7 +16,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="User Guide" href="userguide.html" />
+    <link rel="next" title="Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)" href="installation-cdh.html" />
     <link rel="prev" title="Overview" href="overview.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -36,6 +36,37 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation-cdh.html">Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-cdh-step1.html">Step 1: Install Unravel Server on CDH+CM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-cdh-step2.html">Step 2: Install Unravel Sensor Parcel on CDH+CM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-cdh-step3.html">Step 3: Enable Impala APM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-hdp.html">Hortonworks Data Platform (HDP)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-hdp-step1.html">Step 1: Install Unravel Server on HDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-hdp-step2.html">Step 2: Enable Additional Data Collection / Instrumentation for HDP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-mapr.html">MapR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-mapr-step1.html">Unravel 4.4 : Step 1: Install Unravel Server on MapR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-mapr-step2.html">Part 2: Enable Additional Data Collection / Instrumentation for MapR</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-amazonemr.html">Amazon Elastic MapReduce (Amazon EMR)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-amazonemr-step1.html">Step 1: Install Unravel EC2 node for Amazon EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-amazonemr-step2.html">Step 2: Connect Unravel EC2 node to new or existing EMR clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-amazonemr-step3.html">Step 3: Set up AWS RDS for Unravel DB (Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-amazonemr-step4.html">Step 4: VPC Peering for Unravel EC2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h1>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="docutils container" id="page">
 <div class="aui-page-panel docutils container" id="main">
 <div class="docutils container" id="main-header">
@@ -150,9 +181,18 @@ Migration</a></li>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-cdh.html">Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-hdp.html">Hortonworks Data Platform (HDP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-mapr.html">MapR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-amazonemr.html">Amazon Elastic MapReduce (Amazon EMR)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#id1">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html#id1">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-topics.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html#id1">Advanced Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
@@ -163,7 +203,7 @@ Migration</a></li>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="overview.html" title="previous chapter">Overview</a></li>
-      <li>Next: <a href="userguide.html" title="next chapter">User Guide</a></li>
+      <li>Next: <a href="installation-cdh.html" title="next chapter">Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)</a></li>
   </ul></li>
 </ul>
 </div>

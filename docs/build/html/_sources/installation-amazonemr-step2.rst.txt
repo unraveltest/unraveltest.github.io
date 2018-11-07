@@ -1,3 +1,8 @@
+:title: Step 2: Connect Unravel EC2 node to new or existing EMR clusters
+
+Step 2: Connect Unravel EC2 node to new or existing EMR clusters
+=================================================================
+
 .. container::
    :name: page
 

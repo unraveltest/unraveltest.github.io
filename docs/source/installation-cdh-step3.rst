@@ -1,3 +1,8 @@
+:title: Step 3: Enable Impala APM
+
+Step 3: Enable Impala APM
+===========================
+
 .. container::
    :name: page
 

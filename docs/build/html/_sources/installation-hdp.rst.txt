@@ -1,3 +1,15 @@
+:title: Hortonworks Data Platform (HDP)
+
+Hortonworks Data Platform (HDP)
+===============================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   installation-hdp-step1
+   installation-hdp-step2
+   
 .. container::
    :name: page
 

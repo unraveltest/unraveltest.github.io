@@ -1,5 +1,8 @@
 :title: Getting Started
 
+Getting Started
+================
+
 .. container::
    :name: page
 

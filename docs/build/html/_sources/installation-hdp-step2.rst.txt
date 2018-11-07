@@ -1,3 +1,8 @@
+:title: Step 2: Enable Additional Data Collection / Instrumentation for HDP
+
+Step 2: Enable Additional Data Collection / Instrumentation for HDP
+======================================================================
+
 .. container::
    :name: page
 

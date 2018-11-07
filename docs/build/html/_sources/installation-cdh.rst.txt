@@ -1,3 +1,16 @@
+:title: Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)
+
+Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)
+================================================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   installation-cdh-step1
+   installation-cdh-step2
+   installation-cdh-step3
+   
 .. container::
    :name: page
 

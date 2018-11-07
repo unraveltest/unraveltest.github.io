@@ -1,0 +1,578 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Operations Page &#8212; UN45  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Applications Page" href="userguide-the-applications-page.html" />
+    <link rel="prev" title="Common UI Features" href="userguide-common-ui-features.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-operations-page">
+<h1>The Operations Page<a class="headerlink" href="#the-operations-page" title="Permalink to this headline">¶</a></h1>
+<div class="docutils container" id="page">
+<div class="aui-page-panel docutils container" id="main">
+<div class="docutils container" id="main-header">
+<div class="docutils container" id="breadcrumb-section">
+<ol class="arabic simple">
+<li><a class="reference external" href="index.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="Unravel-4.4_541197025.html">Unravel 4.4</a></li>
+<li><a class="reference external" href="User-Guide_541295329.html">User Guide</a></li>
+</ol>
+</div>
+<p class="pagetitle rubric" id="title-heading">Unravel 4.4 : The Operations Page</p>
+</div>
+<div class="view docutils container" id="content">
+<div class="page-metadata docutils container">
+Created by katch, last modified by Gopala Krishna G on Sep
+16, 2018</div>
+<div class="wiki-content group docutils container" id="main-content">
+<div class="panel docutils container">
+<div class="panelheader docutils container">
+<strong>Table of Contents</strong></div>
+<div class="panelcontent docutils container">
+<div class="toc-macro rbtoc1541196990382 docutils container">
+<ul class="simple">
+<li><a class="reference external" href="#TheOperationsPage-DashboardDashboard">Dashboard</a><ul>
+<li><a class="reference external" href="#TheOperationsPage-FinishedYARNapplicationsTile">Finished YARN applications
+Tile</a></li>
+<li><a class="reference external" href="#TheOperationsPage-RunningYARNApplicationTile">Running YARN Application
+Tile</a></li>
+<li><a class="reference external" href="#TheOperationsPage-ResourcesTile">Resources
+Tile</a></li>
+<li><a class="reference external" href="#TheOperationsPage-InefficientApplicationsTile">Inefficient Applications
+Tile</a></li>
+<li><a class="reference external" href="#TheOperationsPage-RecentEventsandAlertsSidebar">Recent Events and Alerts
+Sidebar</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#TheOperationsPage-ChartsUsageDetails">Usage
+Details</a><ul>
+<li><a class="reference external" href="#TheOperationsPage-InfrastructureInfrastructure">Infrastructure</a></li>
+<li><a class="reference external" href="#TheOperationsPage-JobsJobs">Jobs</a></li>
+<li><a class="reference external" href="#TheOperationsPage-NodesNodes">Nodes</a></li>
+<li><a class="reference external" href="#TheOperationsPage-ImpalaImpalaUsage">Impala
+Usage</a></li>
+<li><a class="reference external" href="#TheOperationsPage-KafkaKafka">Kafka</a></li>
+<li><a class="reference external" href="#TheOperationsPage-HBaseHBase">HBase</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The Operations Page provides synopsis of your cluster(s) and
+its activities. It has two tabs:</p>
+<p><strong>Dashboard</strong> and <strong>Usage Detail</strong>. By default it opens
+showing <strong>Operations</strong> | <strong>Dashboard</strong> tab.</p>
+<p>confluence-information-macro has-no-icon confluence-information-macro-note</p>
+<blockquote>
+<div><p>Note</p>
+<div class="confluence-information-macro-body docutils container">
+Click <a class="reference external" href="Common-UI-Features_541295593.html">here</a> for
+common features used throughout Unravel’s UI.</div>
+</div></blockquote>
+<p class="rubric" id="theoperationspage-dashboarddashboard">Dashboard</p>
+<p>To view the Dashboard, click <strong>Operations</strong> |
+<strong>Dashboard</strong>.</p>
+<p>The Dashboard provides an overview of cluster activities
+with links to drill down into YARN applications, resource
+usage, application inefficiencies, and events/alerts.&nbsp;By
+default it is configured to display <em>all</em> clusters <em>hourly</em>
+for the past <em>24 hours</em>.</p>
+<p class="rubric" id="theoperationspage-finishedyarnapplicationstile">Finished YARN applications Tile</p>
+<p>The line graphs display the successful, failed, and killed
+jobs for the <em>time period</em>, using the <em>time incremen</em>t and
+<em>cluster</em>(s) specified. It textually displays the total
+number over the time period.</p>
+<p>Clicking on**&nbsp;Open Section** brings up the window
+<strong>Applications | Applications</strong> window listing all
+applications. See<a class="reference external" href="The-Applications-Page_541164197.html">Finding
+Applications</a>for
+more detail on this view.</p>
+<p class="western rubric" id="theoperationspage-runningyarnapplicationtile">Running YARN Application Tile</p>
+<p>The line graphs display the running and pending jobs for the
+current time. It textually displays the total number at the
+current time period.</p>
+<p>Clicking on**&nbsp;Open Section** opens Operations | Usage
+Details | Jobs.
+See&nbsp;<a class="reference external" href="#TheOperationsPage-ChartsJobs">here</a>for
+more information about this view.</p>
+<p class="western rubric" id="theoperationspage-resourcestile">Resources Tile</p>
+<p>Displays the available and allocated VCore and Memory for
+the entire cluster.</p>
+<p>Clicking on&nbsp;Open Section opensOperations | Usage Details
+|
+Infrastructure.See<a class="reference external" href="#TheOperationsPage-ChartsResources">below</a>&nbsp;for
+an example of this view.</p>
+<p class="western rubric" id="theoperationspage-inefficientapplicationstile">Inefficient Applications Tile</p>
+<p>Its three sub-tabs, <strong>HIVE</strong>, <strong>MapReduce</strong>, and <strong>Spark;</strong>
+each lists the inefficiencies that have occurred for that
+job type and the number of apps experiencing it. Click on
+the sub-tab to change the application type. Click on the
+<strong>Event Name</strong> to bring up the list of applications that
+experienced the event.</p>
+<p>The&nbsp;inefficiencies application is equal to
+the&nbsp;<strong>Applications | Applications</strong> excepting that it
+only displays applications that have experienced the event.
+The event type is noted in the upper left hand corner.
+See<a class="reference external" href="The-Applications-Page_541164197.html">Finding
+Applications</a>for
+more detail on this view.</p>
+<p class="western rubric" id="theoperationspage-recenteventsandalertssidebar">Recent Events and Alerts Sidebar</p>
+<p>The sidebar lists all events and alerts that have occurred
+organized by date and time. A separate entry appears for
+each time a particular Auto Action was triggered. In the
+image below, the same auto action triggered at 23:56 and
+2:58. Clicking an event/alert brings up a Cluster Resource
+view (<strong>Operations | Usage Detail | Infrastructure</strong>)
+displaying a 10 minute time slice (+-5 minutes of the event)
+and includes a list of applications running at that time.
+See <a class="reference external" href="Auto-Actions-Overview_541131624.html#AutoActionsOverview-ClusterView">Auto Actions
+Overview</a>
+for&nbsp;more information. Click <a class="reference external" href="Creating-Auto-Actions_541295518.html">Add a New AutoAction or
+Alert</a> to create a
+new auto action.Click Clear to clear the list.</p>
+<p class="rubric" id="theoperationspage-chartsusagedetails">Usage Details</p>
+<p>`&nbsp; &lt;<a class="reference external" href="https://unraveldata.atlassian.net/wiki/spaces/UN44/pages/edit/541197498?draftId=541295828&amp;draftShareId=6b31e169-5762-4397-8679-e3efd5351da4&amp;">https://unraveldata.atlassian.net/wiki/spaces/UN44/pages/edit/541197498?draftId=541295828&amp;draftShareId=6b31e169-5762-4397-8679-e3efd5351da4&amp;</a>&gt;`__Usage
+Detail has four tabs:</p>
+<ul class="simple">
+<li><a class="reference external" href="#TheOperationsPage-Infrastructure">Infrastructure</a></li>
+<li><a class="reference external" href="#TheOperationsPage-Jobs">Jobs</a></li>
+<li><a class="reference external" href="#TheOperationsPage-Nodes">Nodes</a></li>
+<li><a class="reference external" href="#TheOperationsPage-ImpalaUsage">Impala Usage</a></li>
+<li><a class="reference external" href="#TheOperationsPage-Kafk">Kafka</a></li>
+<li><a class="reference external" href="#TheOperationsPage-HBase">HBase</a></li>
+</ul>
+<p>One of the most difficult challenges in managing
+multi-tenant Hadoop clusters is understanding how resources
+are being used by the applications running in the clusters.
+Through <strong>Usage Details</strong>, Unravel Web UI provides a unique
+forensic view into each cluster’s key performance indicators
+(KPIs) over time and how they relate to the applications
+running in the cluster.</p>
+<p><img alt="(lightbulb)" class="emoticon emoticon-light-on" src="images/icons/emoticons/lightbulb_on.png" />&nbsp;For example, Unravel can pinpoint the
+applications causing a sudden a spike in the total VCores or
+memory MB&nbsp;usage. This allows you to easily you drill down
+into these applications to understand their behavior.
+Whenever possible, Unravel provides <a class="reference external" href="The-Applications-Page_541164197.html#TheApplicationsPage-EventPanel">recommendations and
+insights</a>
+to help improve the application(s) run.</p>
+<p>All the charts and tables are automatically refreshed;
+however refreshing is disabled when you interact within a
+page to alter its display, e.g., change the date range,
+click on a point within in a graph. When disabled a
+<strong>Refresh</strong> button is displayed in Usage Details title bar.
+Click on <strong>Refresh</strong> to resume automatic refreshes.</p>
+<p>By default the Usage Details tab opens showing the
+Infrastructure tab.</p>
+<p>For all charts, click on the menu bars (), for print and
+download options, e.g. csv, jpeg. Click <strong>Show more</strong> to
+expand it. For a particular point in time, hovering over
+chart raises a popup with details while clicking all
+applications running. Once expanded click on the to return
+to the initial view. To zoom in drag over a section of the
+graph; to return to the complete graph click <strong>Reset
+Graph</strong>. The examples below are showing the Vcores-Total
+graph from the <strong>Infrastructure</strong> Tab expanded and then
+zoomed in a section..</p>
+<p class="rubric" id="theoperationspage-infrastructureinfrastructure">Infrastructure</p>
+<p>This tab contains four (4) graphs.</p>
+<ul class="simple">
+<li>The upper two list available and allocated Vcores and
+memory for the entire Cluster, and</li>
+<li>The bottom show the Vcores and memory used by specific
+view, i.e., <strong>Application Type</strong>, <strong>User</strong>, <strong>Queue</strong>,
+and <strong>Business</strong> <strong>Tags</strong>.</li>
+</ul>
+<p>Clicking within a chart (1) displays the applications
+running for that point in time.</p>
+<p>You can chose how to display the bottom two graphs by
+clicking on the <strong>View By</strong> type (2). Once you have chosen
+your view, the first three (3) available values for that
+view are displayed in the <strong>Showing</strong> box (3), i.e., job
+types running, mapReduce, Spark. Above the box notes the
+number displayed of the total available values for
+the&nbsp;<strong>View</strong> type. Regardless the total available values
+by View By choice, you may only graph up to four (4). Click
+within the <strong>Showing</strong> box to see all available values; to
+remove a value click on the <strong>x</strong> next to its name (3). By
+default <strong>Infrastructure</strong> opens displaying <strong>Application
+Type</strong>. In the example below only one application type if
+available, Mapreduce. In the example
+<a class="reference external" href="#TheOperationsPage-Infra-Vcores">above</a> Vcores-Total was
+expanded (<strong>show more</strong>) and then zoomed in on a section.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>To <strong>View by</strong> tags, <strong>use the Business Tags</strong> pull down
+menu, which will display all available tags. The tag you
+chose is displayed in blue to left of the Business Tags. To
+add a tag, click in the <strong>Showing</strong> box to show all
+available tags, click on the tag to use it. You can only
+have up to four (4) tag values. Delete a particular value by
+clicking the x next to remove the value.</p>
+<p class="western rubric" id="theoperationspage-jobsjobs">Jobs</p>
+<p>Graphs&nbsp;the running and accepted jobs as applicable. You can
+<strong>Group by</strong> State, App Type, User, and Queue. By default
+the chart uses State. You can change the display of an item
+via the Group By pull-down.</p>
+<p class="western rubric" id="theoperationspage-nodesnodes">Nodes</p>
+<p>This chart graphs the <strong>Total</strong> number of Nodes and the
+breakdown by node status, Active, Lost, Unhealthy,
+Decommissioned and Rebooted.</p>
+<p>&nbsp;<strong>Total</strong> = <strong>Active</strong> + <strong>Unhealthy</strong></p>
+<p>Where:</p>
+<ul class="simple">
+<li><a href="#id1"><span class="problematic" id="id2">**</span></a>Active:&nbsp;** currently running and healthy nodes, and</li>
+<li><strong>Unhealthy:</strong> currently running and unhealthy nodes.</li>
+</ul>
+<p>You can toggle the display of an item by clicking on its
+name.</p>
+<p class="western rubric" id="theoperationspage-impalaimpalausage">Impala Usage</p>
+<p>Graphs&nbsp;memory MB consumption and Query Number. The <strong>#
+Queries</strong> graph can be displayed by <strong>Tags</strong> and <strong>Group
+By</strong> (User or Queue).</p>
+<p class="western rubric" id="theoperationspage-kafkakafka">Kafka</p>
+<p>Lists all the configured Kafka clusters. See <a class="reference external" href="The-Applications-Page_541164197.html#TheApplicationsPage-KafkaAPM">Kafka
+Application
+Manager</a>
+for more information. See <a class="reference external" href="https://unraveldata.atlassian.net/wiki/spaces/UN43/pages/228753804/Kafka+Insights">Kafka Use
+Case</a>
+for information on drilling down into a Cluster to locate
+lagging and stalled Topics/Partitions.</p>
+<p>Clicking the cluster name brings detailed information about
+the Kafka Cluster</p>
+<p class="western rubric" id="theoperationspage-hbasehbase">HBase</p>
+<p>confluence-information-macro confluence-information-macro-information</p>
+<blockquote>
+<div><div class="confluence-information-macro-body docutils container">
+Please see<a class="reference external" href="HBASE--Configuration_546537734.html">HBase
+Configuration</a>for
+configuring Unravel UIX for HBase clusters.</div>
+</div></blockquote>
+<p class="rubric" id="theoperationspage-clustersview">Clusters View</p>
+<p>Clusters page lists all the available HBase clusters</p>
+<p>Click on a cluster name to bring up the cluster’s
+information the HBase Cluster view.</p>
+<p class="rubric" id="theoperationspage-clusterview">Cluster View</p>
+<p>This view is divided into four (4) sections. When an
+component’s health is noted, hovering over it’s health glyph
+brings up details, .</p>
+<p><strong>Cluster Information</strong></p>
+<p>A bar at shows what cluster you are displaying with a
+pull-down which allows you to switch between clusters.
+Listed immediately below are the cluster metrics. You can
+choose to tab between clusters by choosing all cluster.
+Shown below is the tabbed view.</p>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a>Region Servers
+**</p>
+<p>Lists the the cluster regional services, with their KPI’s
+and health. You can search on the region server by name.
+Click on the server’s name to bring up
+its<a class="reference external" href="#TheOperationsPage-RegionServ">details.</a></p>
+<p>Region Servers KPI</p>
+<p>Graphs the regional server metrics, the graphs are linked
+with the table list below them. Click within a graph to see
+up the tables associated servers that point in time.&nbsp;Hover
+over a point to bring up a popup displaying the information
+for that point in time. Click Show More the expand the graph
+with the table list to full window width. Click to print or
+download the graph.</p>
+<p>Tables</p>
+<p>List all the tables associated with the cluster, their KPIs
+and the table’s health. Click on the table name to bring up
+its information. You can search for a table by name; any
+table with a name matching or containing the string is
+displayed.</p>
+<p class="rubric" id="theoperationspage-regionserverregionserverview">Region Server View</p>
+<p>Server, Operational, and OS Metrics are displayed. Hover
+over the metric for its description. For more information on
+the metrics
+see<a class="reference external" href="HBASE--Alerts-and-Metrics_541197498.html#HBASEAlertsandMetrics-RegionServerMetric">here</a>.
+You can change the date range to display using the date
+picker. The first four (4) regional server metrics are
+graphed the daily. Use the pull down menu to the weekly
+view. Click to print or download the graph. The table list
+contains all the tables that have been accessed by this
+server. You can search the table list by name. Click on the
+table name to bring up its details.</p>
+<p class="western rubric" id="theoperationspage-tableview">Table View</p>
+<p>Table has two tabs, <strong>Table</strong> and <strong>Region</strong>. It opens in
+the <strong>Table</strong> view, which displays the Table’s KPIs. Three
+of the KPIs, regionCount, readRequestCount, and
+writeRequestCount are also graphed and linked with the
+application list below them.&nbsp;Click to print or download the
+graph.Hover over the graph to display the information for
+that point in time. Click within the graph to display the
+applications running at that point in time. Click on the
+application’s name to open it in its application manager.</p>
+<p class="rubric" id="theoperationspage-tableregions">Table Regions</p>
+<p>Lists all the regions with their KPIs and health.</p>
+</div>
+<div class="pagesection group docutils container">
+<div class="pagesectionheader docutils container">
+<p class="pagesectiontitle rubric" id="attachments">Attachments:</p>
+</div>
+<div class="greybox docutils container">
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image1" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541098773.png">closeCross.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image2" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541197165.png">20180521-OpsUsageHeader.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image3" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541295434.png">2018-05-25_172.36.1.124_OpsDash-FinishedYarn.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image4" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541033301/541295438.rtf">201804-18
+TODO.rtf</a>
+(text/rtf)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image5" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541295442.png">2018-05-25_172.36.1.124_OpsDash-RunningYarn.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image6" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541393657.png">2018-05-25_172.36.1.124_OpsDash-AA-2.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image7" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541033301/541033315.png">20180525-172.36.1.124-OpsUD-Infra-Expd
+.png</a> (image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image8" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541393661.png">2018-05-25_172.36.1.124_OpsResourcesTile.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image9" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541393665.png">20180525_172.36.1.124-SelectTags.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image10" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541328217.png">2018-05-25_172.36.1.124_4.3.1.3-OpsUD-Jobs.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image11" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541033301/541131564.png">20180525-172.36.1.124-OpsUD-Infra-Zoom
+.png</a> (image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image12" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541098777.png">2018-05-25_172.36.1.124_4.3.1.3-OpsUD-Nodes.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image13" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541295446.png">20180525_172.36.1.124-OpsUD-InfaExp.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image14" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541197169.png">2018-05-25_172.36.1.124_OpsDash-IneffAppsDrillDown.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image15" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541098781.png">20180525_172.36.1.124-OpsUD-Infra-Zoom.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image16" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541295450.png">1-Operation-Charts-KafkaWArrow.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image17" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541361011.png">2018-05-25_172.36.1.124_4.3.1.3-OpsUD-ImpalaUsage.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image18" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541164300.png">20180429_172.36.1.115-Kafka-ClusterView.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image19" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541131568.png">20180521-OpsUsageInfraHover.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image20" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541295454.png">2018-05-25_172.36.1.124-4.31.3-OpsUD-Infra.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image21" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541361015.png">2018-05-25_172.36.1.124_OpsDash-IneffApps.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image22" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541295458.png">2018-05-25_172.36.1.124_OpsDash-FY-App.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image23" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541229761.png">2018-05-25_172.36.1.124_Operations.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image24" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/546046348.png">20180806_124_Ops-UsageDetail-Hdr.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image25" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/546046343.png">20180806_124_Ops-UsageDetail-Hdr.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image26" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/545947981.png">Ops-HBASECluster-List.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image27" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/545947985.png">Ops-HBASE-RegionServer.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image28" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/545947989.png">Ops-HBASE-Table.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image29" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/545915313.png">Ops-HBASE-Opening.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image30" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/561775663.png">4.4-OpsUsageDetails-Hdr.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image31" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/561578763.png">Refresh.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image32" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/561873781.png">4.4-Op-UD-HbaseClusters.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image33" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575734444.png">HBaseView-KPIs.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image34" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575668699.png">HBaseViewComplete.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image35" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575504906.png">ClusterViewAllClusters.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image36" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575603320.png">ClusterView-RegServ.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image37" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575734464.png">ClusterView-RegSerGraphs.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image38" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575668713.png">ClusterViewTables.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image39" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575603337.png">HBase-RegionServer.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image40" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/541033311.png">MenuBars.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image41" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575603355.png">HBASE-Table.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image42" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575472216.png">Table-Region.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image43" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a>
+<a class="reference external" href="attachments/541033301/575603378.png">bad.png</a>
+(image/png)
+<a class="reference internal" href="images/icons/bullet_blue.gif"><img alt="image44" src="images/icons/bullet_blue.gif" style="width: 8px; height: 8px;" /></a> <a class="reference external" href="attachments/541033301/575537734.png">Screen Shot 2018-09-16 at
+22.53.06.png</a>
+(image/png)</div>
+</div>
+</div>
+</div>
+<div class="docutils container" id="footer">
+<div class="section footer-body docutils container">
+<p>Document generated by Confluence on Nov 02, 2018 15:16</p>
+<div class="docutils container" id="footer-logo">
+<a class="reference external" href="http://www.atlassian.com/">Atlassian</a></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">UN45</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#id1">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="userguide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="userguide-gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide-common-ui-features.html">Common UI Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Operations Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide-the-applications-page.html">The Applications Page</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html#id1">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-topics.html#id1">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="userguide.html">User Guide</a><ul>
+      <li>Previous: <a href="userguide-common-ui-features.html" title="previous chapter">Common UI Features</a></li>
+      <li>Next: <a href="userguide-the-applications-page.html" title="next chapter">The Applications Page</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Unravel Data. All rights reserved.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/userguide-the-operations-page.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

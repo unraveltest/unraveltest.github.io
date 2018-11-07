@@ -1,3 +1,5 @@
+:title: Role Based Access Control (RBAC)
+
 .. container::
    :name: page
 

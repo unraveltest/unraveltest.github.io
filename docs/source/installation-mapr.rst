@@ -1,3 +1,5 @@
+:title: MapR
+
 .. container::
    :name: page
 

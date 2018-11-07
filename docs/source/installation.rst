@@ -1,5 +1,14 @@
 :title: Installation
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   installation-cdh
+   installation-hdp
+   installation-mapr
+   installation-amazonemr
+   
 Installation
 ============
 .. container::

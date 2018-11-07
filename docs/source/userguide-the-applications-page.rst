@@ -1,3 +1,5 @@
+:title: The Applications Page
+
 .. container::
    :name: page
 

@@ -1,3 +1,5 @@
+:title: Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)
+
 .. container::
    :name: page
 

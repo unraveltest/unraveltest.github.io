@@ -1,3 +1,5 @@
+:title: The Operations Page
+
 .. container::
    :name: page
 

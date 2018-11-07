@@ -1,3 +1,5 @@
+:title: Hortonworks Data Platform (HDP)
+
 .. container::
    :name: page
 

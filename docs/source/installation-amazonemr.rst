@@ -1,3 +1,5 @@
+:title: Amazon Elastic MapReduce (Amazon EMR)
+
 .. container::
    :name: page
 

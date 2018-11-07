@@ -1,10 +1,13 @@
----
-layout: default
-title: Troubleshooting
----
+  - title  
+    Roles and Role Based Access Control
 
+# Roles and Role Based Access Control
 
-# Troubleshooting
+<div class="toctree">
+
+advanced-topics-rbac-rbac
+
+</div>
 
 <div id="page" class="container">
 
@@ -16,10 +19,11 @@ title: Troubleshooting
 
 1.  [Unravel 4.4](index.html)
 2.  [Unravel 4.4](Unravel-4.4_541197025.html)
+3.  [Advanced Topics](Advanced-Topics_541197049.html)
 
 </div>
 
-**Unravel 4.4 : Troubleshooting**
+**Unravel 4.4 : Roles and Role Based Access Control**
 
 </div>
 
@@ -33,34 +37,8 @@ Created by katch on Jul 30, 2018
 
 <div id="main-content" class="container wiki-content group">
 
-Add troubleshooting article
-
------
-
-  - [Sending Diagnostics to Unravel
-    Support](Sending-Diagnostics-to-Unravel-Support_541164089.html)
-
-\<In progress\>
-
-If you can't reach Unravel Server, (i) ping LANS\_DNS, (ii) try this
-workaround:
-
-</div>
-
-<div class="container pageSection group">
-
-<div class="container pageSectionHeader">
-
-**Attachments:**
-
-</div>
-
-<div class="container greybox">
-
-![image0](images/icons/bullet_blue.gif)
-[logo\_small.png](attachments/541360789/541229561.png) (image/png)
-
-</div>
+  - [Role Based Access Control (RBAC)](541131426.html)
+  - [Supported Roles](Supported-Roles_541360915.html)
 
 </div>
 

@@ -1,13 +1,11 @@
----
-layout: default
-title: MapR
----
+  - title  
+    Hortonworks Data Platform (HDP)
 
-# MapR
+# Hortonworks Data Platform (HDP)
 
 <div class="toctree">
 
-installation-mapr-step1 installation-mapr-step2
+installation-hdp-step1 installation-hdp-step2
 
 </div>
 
@@ -25,7 +23,7 @@ installation-mapr-step1 installation-mapr-step2
 
 </div>
 
-**Unravel 4.4 : MapR**
+**Unravel 4.4 : Hortonworks Data Platform (HDP)**
 
 </div>
 
@@ -43,23 +41,23 @@ Created by katch, last modified by Bala Venkatrao on Oct 26, 2018
 
 </div>
 
-confluence-information-macro confluence-information-macro-information
+confluence-information-macro confluence-information-macro-tip
 
 > 
 > 
 > <div class="container confluence-information-macro-body">
 > 
-> This guide is compatible with
+> This guide is compatible with:
 > 
->   - MapR 5.1, 5.2, 6.0.1
+>   - HDP 2.2-2.6
 > 
 > </div>
 
 **Ordered Steps**
 
-  - [Step 1: Install Unravel Server on MapR](541361105.html)
-  - [Part 2: Enable Additional Data Collection / Instrumentation for
-    MapR](541361101.html)
+  - [Step 1: Install Unravel Server on HDP](541098908.html)
+  - [Step 2: Enable Additional Data Collection / Instrumentation for
+    HDP](561709534.html)
 
 <div class="container">
 

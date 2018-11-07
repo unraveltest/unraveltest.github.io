@@ -1,5 +1,7 @@
-  - title  
-    MapR
+---
+layout: default
+title: MapR
+---
 
 # MapR
 

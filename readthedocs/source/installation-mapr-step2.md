@@ -1,5 +1,7 @@
-  - title  
-    Part 2: Enable Additional Data Collection / Instrumentation for MapR
+---
+layout: default
+title: Part 2: Enable Additional Data Collection / Instrumentation for MapR
+---
 
 # Part 2: Enable Additional Data Collection / Instrumentation for MapR
 

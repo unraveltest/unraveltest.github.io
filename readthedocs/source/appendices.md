@@ -1,10 +1,7 @@
----
-layout: default
-title: Troubleshooting
----
+  - title  
+    Appendices
 
-
-# Troubleshooting
+# Appendices
 
 <div id="page" class="container">
 
@@ -19,7 +16,7 @@ title: Troubleshooting
 
 </div>
 
-**Unravel 4.4 : Troubleshooting**
+**Unravel 4.4 : Appendices**
 
 </div>
 
@@ -27,23 +24,22 @@ title: Troubleshooting
 
 <div class="container page-metadata">
 
-Created by katch on Jul 30, 2018
+Created by katch, last modified on Aug 19, 2018
 
 </div>
 
 <div id="main-content" class="container wiki-content group">
 
-Add troubleshooting article
-
------
-
-  - [Sending Diagnostics to Unravel
-    Support](Sending-Diagnostics-to-Unravel-Support_541164089.html)
-
-\<In progress\>
-
-If you can't reach Unravel Server, (i) ping LANS\_DNS, (ii) try this
-workaround:
+  - [Event List](Event-List_541295315.html)
+  - [Finding Unravel properties' values in Microsoft's
+    Azure](Finding-Unravel-properties%27-values-in-Microsoft%27s-Azure_541197084.html)
+  - [HBASE Alerts and Metrics](HBASE--Alerts-and-Metrics_541197498.html)
+  - [Resource Metrics](Resource-Metrics_541164163.html)
+  - [Server Daemon Reference](Server-Daemon-Reference_541098670.html)
+  - [Some Keywords and Error
+    Messages](Some-Keywords-and-Error-Messages_541098674.html)
+  - [How to Write Jolokia JMX
+    MBean](How-to-Write-Jolokia-JMX-MBean_551387797.html)
 
 </div>
 
@@ -58,7 +54,8 @@ workaround:
 <div class="container greybox">
 
 ![image0](images/icons/bullet_blue.gif)
-[logo\_small.png](attachments/541360789/541229561.png) (image/png)
+[Unravel-IssueLog.xlsx](attachments/541360926/541328099.xlsx)
+(application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
 
 </div>
 

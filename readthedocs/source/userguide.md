@@ -1,6 +1,8 @@
-  - title  
-    User Guide
-
+---
+layout: default
+title: User Guide
+---
+  
 # User Guide
 
 <div class="toctree">

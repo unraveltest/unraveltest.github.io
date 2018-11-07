@@ -1,5 +1,7 @@
-  - title  
-    Unravel 4.4 : Step 1: Install Unravel Server on MapR
+---
+layout: default
+title: Step 1: Install Unravel Server on MapR
+---
 
 # Unravel 4.4 : Step 1: Install Unravel Server on MapR
 

@@ -1,13 +1,13 @@
----
-layout: default
-title: MapR
----
+  - title  
+    Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera
+    Manager
+(CM)
 
-# MapR
+# Cloudera Distribution Including Apache Hadoop (CDH), with Cloudera Manager (CM)
 
 <div class="toctree">
 
-installation-mapr-step1 installation-mapr-step2
+installation-cdh-step1 installation-cdh-step2 installation-cdh-step3
 
 </div>
 
@@ -25,7 +25,8 @@ installation-mapr-step1 installation-mapr-step2
 
 </div>
 
-**Unravel 4.4 : MapR**
+**Unravel 4.4 : Cloudera Distribution Including Apache Hadoop (CDH),
+with Cloudera Manager (CM)**
 
 </div>
 
@@ -43,7 +44,7 @@ Created by katch, last modified by Bala Venkatrao on Oct 26, 2018
 
 </div>
 
-confluence-information-macro confluence-information-macro-information
+confluence-information-macro confluence-information-macro-tip
 
 > 
 > 
@@ -51,15 +52,17 @@ confluence-information-macro confluence-information-macro-information
 > 
 > This guide is compatible with
 > 
->   - MapR 5.1, 5.2, 6.0.1
+>   - CDH 4.5 - 5.14
+>   - Hive versions 0.10.0 through 1.2.x
+>   - Spark versions 1.3, 1.5, 1.6, 2.0
 > 
 > </div>
 
 **Ordered Steps**
 
-  - [Step 1: Install Unravel Server on MapR](541361105.html)
-  - [Part 2: Enable Additional Data Collection / Instrumentation for
-    MapR](541361101.html)
+  - [Step 1: Install Unravel Server on CDH+CM](541131652.html)
+  - [Step 2: Install Unravel Sensor Parcel on CDH+CM](541229840.html)
+  - [Step 3: Enable Impala APM](541229851.html)
 
 <div class="container">
 
@@ -84,8 +87,8 @@ confluence-information-macro-information
 >   - [Small
 >     Files](https://unraveldata.atlassian.net/wiki/spaces/UN44/pages/539820049/The+Reports+Page#TheReportsPage-SmallFilesSmallFiles)
 > 
-> require that you
-> use [MySQL](https://unraveldata.atlassian.net/wiki/spaces/UN44/pages/634978318/Install+and+Configure+MySQL+for+Unravel#InstallandConfigureMySQLforUnravel-Pre-installSteps)
+> require that you use
+> [MySQL](https://unraveldata.atlassian.net/wiki/spaces/UN44/pages/634978318/Install+and+Configure+MySQL+for+Unravel#InstallandConfigureMySQLforUnravel-Pre-installSteps)
 > as your database and install Unravel's Ondemand. See [Installing
 > Ondemand](Installing-Ondemand_593690915.html) for installation
 > instructions.

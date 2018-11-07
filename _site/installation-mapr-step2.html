@@ -1,9 +1,4 @@
----
-layout: default
-title: Part 2: Enable Additional Data Collection / Instrumentation for MapR
----
-
-# Part 2: Enable Additional Data Collection / Instrumentation for MapR
+<h1 id="part-2-enable-additional-data-collection--instrumentation-for-mapr">Part 2: Enable Additional Data Collection / Instrumentation for MapR</h1>
 
 <div id="page" class="container">
 
@@ -109,19 +104,19 @@ contact Unravel Support.
 
 confluence-information-macro confluence-information-macro-note
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> Substitute valid values for:
-> 
->   - `UNRAVEL_HOST_IP` -fully qualified domain name or IP address
->   - `SPARK_VERSION_X.Y.Z`- target Spark version, e.g.,1.3.0, 1.6.0,
->     2.0.1.
->   - `HIVE_VERSION``_X.Y.Z` - target Hive version, e.g.,
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; Substitute valid values for:
+&gt; 
+&gt;   - `UNRAVEL_HOST_IP` -fully qualified domain name or IP address
+&gt;   - `SPARK_VERSION_X.Y.Z`- target Spark version, e.g.,1.3.0, 1.6.0,
+&gt;     2.0.1.
+&gt;   - `HIVE_VERSION``_X.Y.Z` - target Hive version, e.g.,
 1.2.0.
-> 
-> </div>
+&gt; 
+&gt; </div>
 
 <div class="container code panel pdl">
 
@@ -175,50 +170,47 @@ file):**
 
 confluence-information-macro confluence-information-macro-information
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> Hive hook jar is installed under:
-> 
-> `/usr/local/unravel_client/` 
-> 
-> Resource metrics sensor jars are installed under:
-> 
-> `/usr/local/unravel-agent/ `
-> 
-> Configuration changes (for MapR 5.2/MapR 6.0) are made to the
-> following files, (\<`SPARK_VERSION X.Y.Z>`, etc., is your particular
-> version)
-> 
-> `/opt/mapr/spark/spark-<SPARK VERSION
-> X.Y.Z>/conf/spark-defaults.conf `
-> 
-> `/opt/mapr/hive/hive-<HIVE VERSION X.Y>/conf/hive-site.xml `
-> 
-> `/opt/mapr/hive/hive-<HIVE VERSION X.Y>/conf/hive-env.sh` 
-> 
-> `/opt/mapr/hadoop/hadoop-<HADOOP VERSION
-> X.Y.Z>/etc/hadoop/yarn-site.xml`
-> 
-> `/opt/mapr/hadoop/hadoop-<HADOOP VERSION
-> X.Y.Z>/etc/hadoop/mapred-site.xml`
-> 
-> `/usr/local/unravel/etc/unravel.properties`
-> 
-> Copy of original configuration is saved in same directory
-> named `*.preunravel` , 
-> e.g., `/opt/mapr/hive/hive-1.2/conf/hive-site.xml.preunravel`
-> 
-> Once the files are present on edge host where Unravel rpm is
-> installed, you can tar `tar` these changes/additions up and put on
-> other hosts, if that is more convenient than running the script. In
-> all cases, instrumented nodes must be able to open port 4043 of
-> Unravel Server (host2 if multi-host Unravel install).
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; Hive hook jar is installed under:
+&gt; 
+&gt; `/usr/local/unravel_client/` 
+&gt; 
+&gt; Resource metrics sensor jars are installed under:
+&gt; 
+&gt; `/usr/local/unravel-agent/ `
+&gt; 
+&gt; Configuration changes (for MapR 5.2/MapR 6.0) are made to the
+&gt; following files, (\&lt;`SPARK_VERSION X.Y.Z&gt;`, etc., is your particular
+&gt; version)
+&gt; 
+&gt; `/opt/mapr/spark/spark-<SPARK VERSION=""> X.Y.Z&gt;/conf/spark-defaults.conf `
+&gt; 
+&gt; `/opt/mapr/hive/hive-<HIVE VERSION="" X.Y="">/conf/hive-site.xml `
+&gt; 
+&gt; `/opt/mapr/hive/hive-<HIVE VERSION="" X.Y="">/conf/hive-env.sh` 
+&gt; 
+&gt; `/opt/mapr/hadoop/hadoop-<HADOOP VERSION=""> X.Y.Z&gt;/etc/hadoop/yarn-site.xml`
+&gt; 
+&gt; `/opt/mapr/hadoop/hadoop-<HADOOP VERSION=""> X.Y.Z&gt;/etc/hadoop/mapred-site.xml`
+&gt; 
+&gt; `/usr/local/unravel/etc/unravel.properties`
+&gt; 
+&gt; Copy of original configuration is saved in same directory
+&gt; named `*.preunravel` , 
+&gt; e.g., `/opt/mapr/hive/hive-1.2/conf/hive-site.xml.preunravel`
+&gt; 
+&gt; Once the files are present on edge host where Unravel rpm is
+&gt; installed, you can tar `tar` these changes/additions up and put on
+&gt; other hosts, if that is more convenient than running the script. In
+&gt; all cases, instrumented nodes must be able to open port 4043 of
+&gt; Unravel Server (host2 if multi-host Unravel install).
+&gt; 
+&gt; &lt;/div&gt;
 
-</div>
+&lt;/div&gt;
 
 **2. Confirm that Unravel Web UI Shows Additional Data**
 
@@ -239,22 +231,22 @@ gateway/edge/client nodes.
 
 confluence-information-macro confluence-information-macro-information
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> `someUser` **must** be user that can create tables in the default
-> database. If you need to use a different database, copy the script and
-> edit it to change the target database.
-> 
-> This script creates a uniquely named table in the default database,
-> adds some data, runs a Hive query on it, and then deletes the table.
-> 
-> It runs the query twice using different workflow tags so you can
-> clearly see the two different runs of the same workflow in Unravel Web
-> UI.
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; `someUser` **must** be user that can create tables in the default
+&gt; database. If you need to use a different database, copy the script and
+&gt; edit it to change the target database.
+&gt; 
+&gt; This script creates a uniquely named table in the default database,
+&gt; adds some data, runs a Hive query on it, and then deletes the table.
+&gt; 
+&gt; It runs the query twice using different workflow tags so you can
+&gt; clearly see the two different runs of the same workflow in Unravel Web
+&gt; UI.
+&gt; 
+&gt; </div>
 
 <div class="container code panel pdl">
 
@@ -289,7 +281,7 @@ Resource Manager web app address):
     <property>
     <name>yarn.resourcemanager.webapp.address</name>
     <value>10.0.0.110:8088</value>
-    <source>yarn-site.xml</source>
+    <source />yarn-site.xml&lt;/source&gt;
     </property>
     ```
     
@@ -327,17 +319,17 @@ Resource Manager web app address):
 
 confluence-information-macro confluence-information-macro-information
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> To instrument more servers, you can use the setup script we provide or
-> see the effect it has and replicate it using your own provisioning
-> automation system. If you already have a way to customize and deploy
-> `hive-site.xml`, `yarn-site.xml` and user defined function jars, you
-> can add the changes and jar from Unravel to your existing mechanism.
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; To instrument more servers, you can use the setup script we provide or
+&gt; see the effect it has and replicate it using your own provisioning
+&gt; automation system. If you already have a way to customize and deploy
+&gt; `hive-site.xml`, `yarn-site.xml` and user defined function jars, you
+&gt; can add the changes and jar from Unravel to your existing mechanism.
+&gt; 
+&gt; </div>
 
   - Run the shell script `unravel_mapr_setup.sh` on each node of the
     cluster, just like it was run on the Unravel server above.
@@ -362,36 +354,36 @@ confluence-information-macro confluence-information-macro-information
 
 confluence-information-macro confluence-information-macro-information
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> Once the files are updated on edge host where Unravel rpm is
-> installed, you can `scp` these changes/additions and put on other
-> hosts (backup original files in case need to rollback), In all cases,
-> instrumented nodes must be able to open port 4043 of Unravel Server
-> (host2 if multi-host Unravel install).
-> 
-> <div class="container">
-> 
-> </div>
-> 
-> confluence-information-macro confluence-information-macro-note
-> 
-> > 
-> > 
-> > <div class="container confluence-information-macro-body">
-> > 
-> > Be sure to substitute valid values for:
-> > 
-> >   - `UNRAVEL_HOST_IP` -fully qualified domain name or IP address
-> >   - `SPARK_VERSION_X.Y.Z`- target Spark version, e.g.,1.3.0, 1.6.0,
-> >     2.0.1.
-> >   - `HIVE_VERSION``_X.Y.Z` - target Hive version, e.g., 1.2.0.
-> > 
-> > </div>
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; Once the files are updated on edge host where Unravel rpm is
+&gt; installed, you can `scp` these changes/additions and put on other
+&gt; hosts (backup original files in case need to rollback), In all cases,
+&gt; instrumented nodes must be able to open port 4043 of Unravel Server
+&gt; (host2 if multi-host Unravel install).
+&gt; 
+&gt; <div class="container">
+&gt; 
+&gt; </div>
+&gt; 
+&gt; confluence-information-macro confluence-information-macro-note
+&gt; 
+&gt; &gt; 
+&gt; &gt; 
+&gt; &gt; <div class="container confluence-information-macro-body">
+&gt; &gt; 
+&gt; &gt; Be sure to substitute valid values for:
+&gt; &gt; 
+&gt; &gt;   - `UNRAVEL_HOST_IP` -fully qualified domain name or IP address
+&gt; &gt;   - `SPARK_VERSION_X.Y.Z`- target Spark version, e.g.,1.3.0, 1.6.0,
+&gt; &gt;     2.0.1.
+&gt; &gt;   - `HIVE_VERSION``_X.Y.Z` - target Hive version, e.g., 1.2.0.
+&gt; &gt; 
+&gt; &gt; </div>
+&gt; 
+&gt; </div>
 
 **Update `hive-site.xml`**
 
@@ -400,7 +392,7 @@ confluence-information-macro confluence-information-macro-information
 Copy the content
 in `/usr/local/unravel/hive-hook/hive-site.xml.snip` and append it in
 `/opt/mapr/hive/hive-HIVE_VERSION``_X.Y.Z`/conf/hive-site.xml  right
-before \</configuration\> (replace `{UNRAVEL_HOST_IP`}).
+before \&lt;/configuration\&gt; (replace `{UNRAVEL_HOST_IP`}).
 
 <div class="container code panel pdl">
 
@@ -448,7 +440,7 @@ before \</configuration\> (replace `{UNRAVEL_HOST_IP`}).
   <description>for Unravel, from unraveldata.com</description>
 </property>
 
-</configuration>
+&lt;/configuration&gt;
 ```
 
 </div>
@@ -579,26 +571,26 @@ append the following; substituting your local values where noted
 
 confluence-information-macro confluence-information-macro-note
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> Make sure the original value
-> of `yarn.app.mapreduce.am.command-opts`\*\* \*\*is preserved, by
-> appending the java agent setup rather than replacing the original
-> value.
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; Make sure the original value
+&gt; of `yarn.app.mapreduce.am.command-opts`\*\* \*\*is preserved, by
+&gt; appending the java agent setup rather than replacing the original
+&gt; value.
+&gt; 
+&gt; </div>
 
 </div>
 
 </div>
 
-</div>
+&lt;/div&gt;
 
-</div>
+&lt;/div&gt;
 
-</div>
+&lt;/div&gt;
 
 <div id="footer" class="container">
 
@@ -616,4 +608,5 @@ Document generated by Confluence on Nov 02, 2018 15:15
 
 </div>
 
-</div>
+&lt;/div&gt;
+</HADOOP></HADOOP></HIVE></HIVE></SPARK></div></div></div></div></div></div>

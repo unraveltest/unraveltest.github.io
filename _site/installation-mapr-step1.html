@@ -1,9 +1,4 @@
----
-layout: default
-title: Step 1: Install Unravel Server on MapR
----
-
-# Unravel 4.4 : Step 1: Install Unravel Server on MapR
+<h1 id="unravel-44--step-1-install-unravel-server-on-mapr">Unravel 4.4 : Step 1: Install Unravel Server on MapR</h1>
 
 <div id="page" class="container">
 
@@ -149,8 +144,8 @@ installation of Unravel.
 
   - Architecture: x86\_64
   - Cores: 8
-  - RAM: 64GB minimum, 128GB for medium volume (\>25,000 jobs per day),
-    256GB for high volume (\>50,000 jobs per day)
+  - RAM: 64GB minimum, 128GB for medium volume (\&gt;25,000 jobs per day),
+    256GB for high volume (\&gt;50,000 jobs per day)
   - Disk: `/usr/local/unravel` with 8GB free minimum (can be symlink)
   - Disk: `/srv/unravel` with 500GB free minimum (can be symlink)
   - For 60,000+ MR jobs per day, two or more gateway/edge nodes are
@@ -201,17 +196,17 @@ installation of Unravel.
 
 confluence-information-macro confluence-information-macro-information
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> `HIGHLIGHTED `text and text with brackets ( { } ), except where
-> otherwise noted, indicate where you must substitute your particular
-> values for the text.
-> 
-> `UNRAVEL_``HOST`\_IP must be a fully qualified DNS or IP address
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; `HIGHLIGHTED `text and text with brackets ( { } ), except where
+&gt; otherwise noted, indicate where you must substitute your particular
+&gt; values for the text.
+&gt; 
+&gt; `UNRAVEL_``HOST`\_IP must be a fully qualified DNS or IP address
+&gt; 
+&gt; </div>
 
 **1. Configure the Host Machine**
 
@@ -224,7 +219,7 @@ Hive and Spark jobs, it will be convenient for you to have those
 installed there for part 2 of the installation+configuration process. 
 
 For more information about the MapR client configuration,
-see <https://maprdocs.mapr.com/52/ReferenceGuide/configure.sh.html>
+see &lt;https://maprdocs.mapr.com/52/ReferenceGuide/configure.sh.html&gt;
 
 Run the following commands on Unravel Server as `root` substituting your
 site-specific values for `NAME, CLDB_LIST, HISTORY_SERVER.`
@@ -281,7 +276,7 @@ site-specific values for `NAME, CLDB_LIST, HISTORY_SERVER.`
     </div>
 
   - For instructions on adjusting RAM allocated to MapR-FS (mfs), see
-    <https://community.mapr.com/docs/DOC-1209>. For example, edit
+    &lt;https://community.mapr.com/docs/DOC-1209&gt;. For example, edit
     `/opt/mapr/conf/warden.conf` as follows:
     
     <div class="container code panel pdl">
@@ -344,32 +339,32 @@ until the `await_fizup.sh` prints `DONE` (it takes a few minutes).
 
 confluence-information-macro confluence-information-macro-information
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> The installation creates `/usr/local/unravel/` which contains the
-> executables, scripts, and settings. User `unravel` is created. The
-> initial internal database and other durable state are put
-> in `/srv/unravel/` for larger storage. 
-> 
->   
-> The master configuration file is
-> in `/usr/local/unravel/etc/unravel.properties` and the logs are in
-> `/usr/local/unravel/logs/`. The RPM installation creates
-> user `unravel` if it does not already exist and this can be changed
-> after installation; `/etc/init.d/unravel_*` scripts for controlling
-> its services as well as `/etc/init.d/unravel_all.sh` which can be used
-> to manually stop, start, and get status of all daemons in proper
-> order.
-> 
->   
-> During initial install, a bundled database is used. This can be
-> switched to use an [externally managed
-> MySQL](Installing-MySQL-or-Compatible-Database-for-Unravel_541131376.html)
-> for production. 
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; The installation creates `/usr/local/unravel/` which contains the
+&gt; executables, scripts, and settings. User `unravel` is created. The
+&gt; initial internal database and other durable state are put
+&gt; in `/srv/unravel/` for larger storage. 
+&gt; 
+&gt;   
+&gt; The master configuration file is
+&gt; in `/usr/local/unravel/etc/unravel.properties` and the logs are in
+&gt; `/usr/local/unravel/logs/`. The RPM installation creates
+&gt; user `unravel` if it does not already exist and this can be changed
+&gt; after installation; `/etc/init.d/unravel_*` scripts for controlling
+&gt; its services as well as `/etc/init.d/unravel_all.sh` which can be used
+&gt; to manually stop, start, and get status of all daemons in proper
+&gt; order.
+&gt; 
+&gt;   
+&gt; During initial install, a bundled database is used. This can be
+&gt; switched to use an [externally managed
+&gt; MySQL](Installing-MySQL-or-Compatible-Database-for-Unravel_541131376.html)
+&gt; for production. 
+&gt; 
+&gt; </div>
 
 **Do Host-Specific Post-Installation Actions**
 
@@ -600,16 +595,16 @@ You can find and verify the principal the keytab by
 
 confluence-information-macro confluence-information-macro-information
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> The keytab file should have chmod bits 500 and be owned by
-> `unravel` local user (default) or by the user you want to use, as
-> explained in [Run Unravel Daemons with Custom
-> User](Run-Unravel-Daemons-with-Custom-User_541033161.html).
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; The keytab file should have chmod bits 500 and be owned by
+&gt; `unravel` local user (default) or by the user you want to use, as
+&gt; explained in [Run Unravel Daemons with Custom
+&gt; User](Run-Unravel-Daemons-with-Custom-User_541033161.html).
+&gt; 
+&gt; </div>
 
 </div>
 
@@ -712,13 +707,13 @@ and login as user `admin` with password `unraveldata`.
 
 confluence-information-macro confluence-information-macro-note
 
-> 
-> 
-> <div class="container confluence-information-macro-body">
-> 
-> For the free trial version, use the Chrome web browser.
-> 
-> </div>
+&gt; 
+&gt; 
+&gt; <div class="container confluence-information-macro-body">
+&gt; 
+&gt; For the free trial version, use the Chrome web browser.
+&gt; 
+&gt; </div>
 
 ****
 

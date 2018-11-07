@@ -2,3 +2,17 @@
   link: /
 - name: About
   link: /about.html
+- name: Overview
+  link: /overview.html
+- name: Installation
+  link: /installation.html
+- name: User Guide
+  link: /userguide.html
+- name: Advanced Topics
+  link: /advanced-topics.html
+- name: Appendices
+  link: /appendices.html
+- name: Troubleshooting
+  link: /troubleshooting.html
+- name: Release Notes
+  link: /releasenotes.html
